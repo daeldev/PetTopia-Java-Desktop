@@ -1,7 +1,7 @@
 package View;
-import static View.WorkspaceAtendente.WorkspaceAtendente;
-import Util.ConexaoCi;
-import Util.DTO;
+import static View.WorkspaceFuncionario.WorkspaceAtendente;
+import Utils.ConexaoCi;
+import Utils.DTO;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -330,10 +330,10 @@ public class Pagamento extends javax.swing.JInternalFrame {
                     
                     for (int i = 0; i < Carrinho.getRowCount(); i++) {
                         int Quantidade = Integer.parseInt(Carrinho.getValueAt(i, 2).toString());
-                        int Codigo = Integer.parseInt(Carrinho.getValueAt(i, 4).toString());
+                        int idFuncionario = Integer.parseInt(Carrinho.getValueAt(i, 4).toString());
 
                         produtoDTO.setQuantidade(Quantidade);
-                        produtoDTO.setCodigo(Codigo);
+                        produtoDTO.setidFuncionario(idFuncionario);
 
                         ConexaoCi produtoDAO = new ConexaoCi();
                         int rs = produtoDAO.AdicionarItens(produtoDTO, NotaFiscal);

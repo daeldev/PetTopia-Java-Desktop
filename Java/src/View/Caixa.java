@@ -4,9 +4,9 @@
  */
 package View;
 
-import static View.WorkspaceAtendente.WorkspaceAtendente;
-import Util.ConexaoCi;
-import Util.DTO;
+import static View.WorkspaceFuncionario.WorkspaceAtendente;
+import Utils.ConexaoCi;
+import Utils.DTO;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -39,7 +39,7 @@ public class Caixa extends javax.swing.JInternalFrame {
         JBLimpar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         JSQuantidade = new javax.swing.JSpinner();
-        JTCodigo = new javax.swing.JTextField();
+        JTidFuncionario = new javax.swing.JTextField();
         JBAtualizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         JTCarrinho = new javax.swing.JTable();
@@ -83,12 +83,12 @@ public class Caixa extends javax.swing.JInternalFrame {
 
         JSQuantidade.setToolTipText("");
 
-        JTCodigo.setBackground(new java.awt.Color(51, 51, 51));
-        JTCodigo.setForeground(new java.awt.Color(255, 255, 255));
-        JTCodigo.setMinimumSize(new java.awt.Dimension(8, 19));
-        JTCodigo.addActionListener(new java.awt.event.ActionListener() {
+        JTidFuncionario.setBackground(new java.awt.Color(51, 51, 51));
+        JTidFuncionario.setForeground(new java.awt.Color(255, 255, 255));
+        JTidFuncionario.setMinimumSize(new java.awt.Dimension(8, 19));
+        JTidFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTCodigoActionPerformed(evt);
+                JTidFuncionarioActionPerformed(evt);
             }
         });
 
@@ -111,7 +111,7 @@ public class Caixa extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(JTCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JTidFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(24, 24, 24)
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -130,7 +130,7 @@ public class Caixa extends javax.swing.JInternalFrame {
                 .addGap(16, 16, 16)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(JTCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTidFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JSQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12))
                 .addGap(18, 18, 18)
@@ -290,9 +290,9 @@ public class Caixa extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    public boolean VerificarProduto(int Codigo){
+    public boolean VerificarProduto(int idFuncionario){
         for (int i = 0; i < JTCarrinho.getRowCount(); i++){
-            if(Integer.parseInt(JTCarrinho.getValueAt(i, 4).toString()) == Codigo){
+            if(Integer.parseInt(JTCarrinho.getValueAt(i, 4).toString()) == idFuncionario){
                 return false;
             }
         }
@@ -304,10 +304,10 @@ public class Caixa extends javax.swing.JInternalFrame {
         DTO.ProdutoDTO produtoDTO = dto.new ProdutoDTO();
         
         try{
-            int Codigo = Integer.parseInt(JTCodigo.getText().toString());
-            produtoDTO.setCodigo(Codigo); 
+            int idFuncionario = Integer.parseInt(JTidFuncionario.getText().toString());
+            produtoDTO.setidFuncionario(idFuncionario); 
             
-            if (VerificarProduto(Integer.parseInt(JTCodigo.getText().toString()))){
+            if (VerificarProduto(Integer.parseInt(JTidFuncionario.getText().toString()))){
                 produtoDTO.setQuantidade(Integer.valueOf(JSQuantidade.getValue().toString()));
                 ConexaoCi Ci = new ConexaoCi();
                 if (Ci.VerificarEstoque(produtoDTO)){
@@ -315,10 +315,10 @@ public class Caixa extends javax.swing.JInternalFrame {
                     double Preco = produtoDTO.getPreco();
                     int Quantidade = Integer.parseInt(JSQuantidade.getValue().toString());
                     double Subtotal = Preco*Quantidade;
-                    String Produto = produtoDTO.getNome();
+                    String Produto = produtoDTO.getnome();
 
                     DefaultTableModel modelo = (DefaultTableModel) JTCarrinho.getModel();
-                    Object[] dados = {Produto, produtoDTO.getTamanho(), Quantidade, Preco, produtoDTO.getCodigo(), Subtotal};
+                    Object[] dados = {Produto, produtoDTO.getTamanho(), Quantidade, Preco, produtoDTO.getidFuncionario(), Subtotal};
 
                     for (int i = 0; i < JTCarrinho.getRowCount(); i++){
                         Acumulador += Double.valueOf(JTCarrinho.getValueAt(i, 5).toString());
@@ -326,7 +326,7 @@ public class Caixa extends javax.swing.JInternalFrame {
                     JTTotal.setText(Double.toString(Acumulador+Subtotal));
                     modelo.addRow(dados);
 
-                    JTCodigo.setText("");
+                    JTidFuncionario.setText("");
                     JSQuantidade.setValue(0);
                 }
             }else{
@@ -354,7 +354,7 @@ public class Caixa extends javax.swing.JInternalFrame {
             }
 
             // Atualiza o campo campototal com o novo total acumulado
-            JTCodigo.setText("");
+            JTidFuncionario.setText("");
             JSQuantidade.setValue(0);
             JTTotal.setText(Double.toString(novoTotal));  
         } else {
@@ -362,13 +362,13 @@ public class Caixa extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_JBLimparActionPerformed
 
-    private void JTCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTCodigoActionPerformed
+    private void JTidFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTidFuncionarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTCodigoActionPerformed
+    }//GEN-LAST:event_JTidFuncionarioActionPerformed
 
     private void JTCarrinhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTCarrinhoMouseClicked
         if(JTCarrinho.getSelectedRow() != -1){
-             JTCodigo.setText(JTCarrinho.getValueAt(JTCarrinho.getSelectedRow(), 4).toString());
+             JTidFuncionario.setText(JTCarrinho.getValueAt(JTCarrinho.getSelectedRow(), 4).toString());
              JSQuantidade.setValue(JTCarrinho.getValueAt(JTCarrinho.getSelectedRow(), 2));
          }
         
@@ -412,10 +412,10 @@ public class Caixa extends javax.swing.JInternalFrame {
         DTO.ProdutoDTO produtoDTO = dto.new ProdutoDTO();
         if(JTCarrinho.getSelectedRow() != -1){    
             int Quantidade = Integer.parseInt(JSQuantidade.getValue().toString());
-            int Codigo = Integer.parseInt(JTCarrinho.getValueAt(JTCarrinho.getSelectedRow(), 4).toString());
+            int idFuncionario = Integer.parseInt(JTCarrinho.getValueAt(JTCarrinho.getSelectedRow(), 4).toString());
             
             produtoDTO.setQuantidade(Quantidade);
-            produtoDTO.setCodigo(Codigo);
+            produtoDTO.setidFuncionario(idFuncionario);
             
             ConexaoCi Ci = new ConexaoCi();
             if (Ci.VerificarEstoque(produtoDTO)){
@@ -430,7 +430,7 @@ public class Caixa extends javax.swing.JInternalFrame {
                     Acumulador += Double.valueOf(JTCarrinho.getValueAt(i, 5).toString());
                 }
                 JTTotal.setText(Double.toString(Acumulador));
-                JTCodigo.setText("");
+                JTidFuncionario.setText("");
                 JSQuantidade.setValue(0);
             }   
         }else{
@@ -447,7 +447,7 @@ public class Caixa extends javax.swing.JInternalFrame {
     private javax.swing.JButton JBPagar;
     private javax.swing.JSpinner JSQuantidade;
     public javax.swing.JTable JTCarrinho;
-    private javax.swing.JTextField JTCodigo;
+    private javax.swing.JTextField JTidFuncionario;
     private javax.swing.JTextField JTTotal;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

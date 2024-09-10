@@ -1,6 +1,6 @@
 package View;
-import Util.ConexaoCi;
-import Util.DTO;
+import Utils.ConexaoCi;
+import Utils.DTO;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -222,18 +222,18 @@ public class Estoque extends javax.swing.JInternalFrame {
         }
         
         produtoDTO.setQuantidade(Integer.valueOf(JSQuantidade.getValue().toString()));
-        produtoDTO.setNome(JTProduto.getText());
+        produtoDTO.setnome(JTProduto.getText());
         produtoDTO.setTamanho(JCTamanho.getSelectedItem().toString());         
         ConexaoCi conexaoCi = new ConexaoCi();
         int resultado = conexaoCi.AdicionarEstoque(produtoDTO);
         if (resultado != -1) {
             DefaultTableModel modelo = (DefaultTableModel) JTEstoque.getModel();
             Object[] dados = {
-                produtoDTO.getNome(),
+                produtoDTO.getnome(),
                 produtoDTO.getTamanho(),
                 produtoDTO.getQuantidade(),
                 produtoDTO.getPreco(),
-                produtoDTO.getCodigo()
+                produtoDTO.getidFuncionario()
             };
             modelo.addRow(dados);
         }

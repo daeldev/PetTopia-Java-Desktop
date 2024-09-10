@@ -1,8 +1,8 @@
 package View;
 
 
-import Util.ConexaoCi;
-import Util.DTO;
+import Utils.ConexaoCi;
+import Utils.DTO;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,16 +24,16 @@ public class Clientes extends javax.swing.JInternalFrame {
         JTClientes = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         JTTelefone = new javax.swing.JFormattedTextField();
-        JTNome = new javax.swing.JTextField();
+        JTnome = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        JTCPF = new javax.swing.JFormattedTextField();
+        JTcpf = new javax.swing.JFormattedTextField();
         JBAdicionar = new javax.swing.JButton();
         JBAtualizar = new javax.swing.JButton();
         JBRemover = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        JCBSexo = new javax.swing.JComboBox<>();
+        JCBgenero = new javax.swing.JComboBox<>();
         JTDataNasc = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -66,7 +66,7 @@ public class Clientes extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Código", "Nome", "CPF", "Telefone", "Data de Nascimento", "Sexo"
+                "Código", "nome", "cpf", "Telefone", "Data de Nascimento", "genero"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -109,33 +109,33 @@ public class Clientes extends javax.swing.JInternalFrame {
         });
         jPanel2.add(JTTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 120, -1));
 
-        JTNome.addActionListener(new java.awt.event.ActionListener() {
+        JTnome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTNomeActionPerformed(evt);
+                JTnomeActionPerformed(evt);
             }
         });
-        jPanel2.add(JTNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 200, -1));
+        jPanel2.add(JTnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 200, -1));
 
         jLabel8.setText("Telefone:");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
 
-        jLabel9.setText("CPF:");
+        jLabel9.setText("cpf:");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
-        jLabel10.setText("Nome:");
+        jLabel10.setText("nome:");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         try {
-            JTCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            JTcpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        JTCPF.addActionListener(new java.awt.event.ActionListener() {
+        JTcpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTCPFActionPerformed(evt);
+                JTcpfActionPerformed(evt);
             }
         });
-        jPanel2.add(JTCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 120, -1));
+        jPanel2.add(JTcpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 120, -1));
 
         JBAdicionar.setBackground(new java.awt.Color(51, 102, 255));
         JBAdicionar.setForeground(new java.awt.Color(255, 255, 255));
@@ -167,11 +167,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         });
         jPanel2.add(JBRemover, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 110, 50));
 
-        jLabel2.setText("Sexo:");
+        jLabel2.setText("genero:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
-        JCBSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino", "Outros" }));
-        jPanel2.add(JCBSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 100, -1));
+        JCBgenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino", "Outros" }));
+        jPanel2.add(JCBgenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 100, -1));
 
         try {
             JTDataNasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -218,11 +218,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         DTO.ClienteDTO clienteDTO = dto.new ClienteDTO();
         
         //Seta os dados fornecidos para o FuncionarioDTO
-        clienteDTO.setNome(JTNome.getText());       
-        clienteDTO.setCPF(JTCPF.getText());
+        clienteDTO.setnome(JTnome.getText());       
+        clienteDTO.setcpf(JTcpf.getText());
         clienteDTO.setTelefone(JTTelefone.getText());
         clienteDTO.setData_nascimento(JTDataNasc.getText());
-        clienteDTO.setSexo(JCBSexo.getSelectedItem().toString());
+        clienteDTO.setgenero(JCBgenero.getSelectedItem().toString());
         
         //Instância a classe ConexaoCi
         ConexaoCi clienteDAO = new ConexaoCi();
@@ -234,7 +234,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         if(Resultado != -1){
             //Grava os dados setados na classe funcionarioDTO para a tabela de cadastros através de um vetor
             DefaultTableModel Tabela = (DefaultTableModel) JTClientes.getModel();
-            Object[] dados = {clienteDTO.getIdcliente(), clienteDTO.getNome(), clienteDTO.getCPF(), clienteDTO.getTelefone(), clienteDTO.getdata_nascimento(), clienteDTO.getSexo()};
+            Object[] dados = {clienteDTO.getIdcliente(), clienteDTO.getnome(), clienteDTO.getcpf(), clienteDTO.getTelefone(), clienteDTO.getdata_nascimento(), clienteDTO.getgenero()};
             Tabela.addRow(dados);
         }                                             
     }//GEN-LAST:event_JBAdicionarActionPerformed
@@ -254,9 +254,9 @@ if(JTClientes.getSelectedRow() != -1){
 
 //         if(JTTabela.getSelectedRow() != -1){
 //             
-//             JTCodigo.setText(JTTabela.getValueAt(JTTabela.getSelectedRow(), 0).toString());
-//             JTNome.setText(JTTabela.getValueAt(JTTabela.getSelectedRow(), 1).toString());
-//             JTCPF.setText(JTTabela.getValueAt(JTTabela.getSelectedRow(), 2).toString());           
+//             JTidFuncionario.setText(JTTabela.getValueAt(JTTabela.getSelectedRow(), 0).toString());
+//             JTnome.setText(JTTabela.getValueAt(JTTabela.getSelectedRow(), 1).toString());
+//             JTcpf.setText(JTTabela.getValueAt(JTTabela.getSelectedRow(), 2).toString());           
 //             JTTelefone.setText(JTTabela.getValueAt(JTTabela.getSelectedRow(), 3).toString());
 //         }
 
@@ -268,9 +268,9 @@ if(JTClientes.getSelectedRow() != -1){
 
     private void JBAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAtualizarActionPerformed
                if(JTClientes.getSelectedRow() != -1){                       
-                JTClientes.setValueAt(JTNome.getText(), JTClientes.getSelectedRow(), 1);   
-                 JTClientes.setValueAt(JTCPF.getText(), JTClientes.getSelectedRow(), 2);
-                 JTClientes.setValueAt(JCBSexo.getSelectedItem(), JTClientes.getSelectedRow(), 5);
+                JTClientes.setValueAt(JTnome.getText(), JTClientes.getSelectedRow(), 1);   
+                 JTClientes.setValueAt(JTcpf.getText(), JTClientes.getSelectedRow(), 2);
+                 JTClientes.setValueAt(JCBgenero.getSelectedItem(), JTClientes.getSelectedRow(), 5);
                  JTClientes.setValueAt(JTTelefone.getText(), JTClientes.getSelectedRow(), 3);
                  JTClientes.setValueAt(JTDataNasc.getText(),JTClientes.getSelectedRow(),4);           
         }else{
@@ -298,24 +298,24 @@ if(JTClientes.getSelectedRow() != -1){
         // TODO add your handling code here:
     }//GEN-LAST:event_JTTelefoneActionPerformed
 
-    private void JTCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTCPFActionPerformed
+    private void JTcpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTcpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTCPFActionPerformed
+    }//GEN-LAST:event_JTcpfActionPerformed
 
-    private void JTNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTNomeActionPerformed
+    private void JTnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTnomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JTNomeActionPerformed
+    }//GEN-LAST:event_JTnomeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBAdicionar;
     private javax.swing.JButton JBAtualizar;
     private javax.swing.JButton JBRemover;
-    private javax.swing.JComboBox<String> JCBSexo;
-    private javax.swing.JFormattedTextField JTCPF;
+    private javax.swing.JComboBox<String> JCBgenero;
+    private javax.swing.JFormattedTextField JTcpf;
     private static javax.swing.JTable JTClientes;
     private javax.swing.JFormattedTextField JTDataNasc;
-    private javax.swing.JTextField JTNome;
+    private javax.swing.JTextField JTnome;
     private javax.swing.JFormattedTextField JTTelefone;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Util;
+package Utils;
 import javax.swing.JOptionPane;
 
 /**
@@ -10,107 +10,6 @@ import javax.swing.JOptionPane;
  * @author Aluno.Tarde
  */
 public class DTO {
-
-    public class FuncionarioDTO {
-        //Funcionário
-        private String Funcao;
-        private String Nome;
-        private String CPF;
-        private String DataNascimento;
-        private String Sexo;
-        private String Usuario;
-        private String Senha;
-        private int Codigo;
-
-        public void setNome(String Nome) {
-            if (!Nome.isEmpty()) {
-                this.Nome = Nome;
-            } else {
-                JOptionPane.showMessageDialog(null, "ERRO: Verifique o nome do funcionário.");
-            }
-        }
-
-        public void setUsuario(String Usuario) {
-            if (!Usuario.isEmpty()) {
-                this.Usuario = Usuario;
-            } else {
-                JOptionPane.showMessageDialog(null, "ERRO: Verifique o Usuario do funcionário.");
-            }
-        }
-
-        public void setSenha(String Senha) {
-            if (!Senha.isEmpty()) {
-                this.Senha = Senha;
-            } else {
-                JOptionPane.showMessageDialog(null, "ERRO: Verifique a senha do funcionário.");
-            }
-        }
-
-        public void setCPF(String CPF) {
-            if (!CPF.equals("   .   .   -  ")) {
-                this.CPF = CPF;
-            } else {
-                JOptionPane.showMessageDialog(null, "ERRO: Verifique o Cpf do funcionário.");
-            }
-        }
-
-        public void setDataNascimento(String DataNascimento) {
-            if (!DataNascimento.equals("  /  /    ")) {
-                this.DataNascimento = DataNascimento;
-            } else {
-                JOptionPane.showMessageDialog(null, "ERRO: Verifique a data de nascimento do funcionário.");
-            }
-        }
-
-        public void setFuncao(String Funcao) {
-            if (!Funcao.isEmpty()) {
-                this.Funcao = Funcao;
-            } else {
-                JOptionPane.showMessageDialog(null, "ERRO: Verifique a função do funcionário.");
-            }
-        }
-
-        public void setSexo(String Sexo) {
-            this.Sexo = Sexo;
-        }
-
-        public void setCodigo(int Codigo) {
-            this.Codigo = Codigo;
-        }
-
-        public String getFuncao() {
-            return Funcao;
-        }
-
-        public String getNome() {
-            return Nome;
-        }
-
-        public String getCPF() {
-            return CPF;
-        }
-
-        public String getDataNascimento() {
-            return DataNascimento;
-        }
-
-        public String getSexo() {
-            return Sexo;
-        }
-
-        public String getUsuario() {
-            return Usuario;
-        }
-
-        public String getSenha() {
-            return Senha;
-        }
-
-        public int getCodigo() {
-            return Codigo;
-        }
-    }
-
     public class VendaDTO {
         private Double Total;
         private int NotaFiscal;
@@ -138,24 +37,24 @@ public class DTO {
 
     public class ProdutoDTO {
         //Produto
-        private String Nome;
+        private String nome;
         private String Tamanho;
         private int Quantidade;
         private Double Preco;
-        private int Codigo;
+        private int idFuncionario;
         
 
-        public void setNome(String Nome) {
-            if (!Nome.isEmpty()) {
-                this.Nome = Nome;
+        public void setnome(String nome) {
+            if (!nome.isEmpty()) {
+                this.nome = nome;
             } else {
                 JOptionPane.showMessageDialog(null, "ERRO: Verifique o nome do produto.");
             }
         }
 
-        public void setCodigo(int Codigo) {
-            if (!String.valueOf(Codigo).isEmpty()) {
-                this.Codigo = Codigo;
+        public void setidFuncionario(int idFuncionario) {
+            if (!String.valueOf(idFuncionario).isEmpty()) {
+                this.idFuncionario = idFuncionario;
             } else {
                 JOptionPane.showMessageDialog(null, "ERRO: Verifique o código do produto.");
             }
@@ -169,16 +68,16 @@ public class DTO {
             this.Tamanho = Tamanho;
         }
 
-        public String getNome() {
-            return Nome;
+        public String getnome() {
+            return nome;
         }
 
         public Double getPreco() {
             return Preco;
         }
 
-        public int getCodigo() {
-            return Codigo;
+        public int getidFuncionario() {
+            return idFuncionario;
         }
 
         
@@ -205,22 +104,22 @@ public class DTO {
 
     public class ClienteDTO {
         //Cliente
-        private String Nome;
+        private String nome;
         private String Telefone;
-        private String CPF;
+        private String cpf;
         private int idCliente;
         private String data_nascimento;
-        private String Sexo;
+        private String genero;
 
-        public String getNome() {
-            return Nome;
+        public String getnome() {
+            return nome;
         }
 
-        public void setNome(String Nome) {
-            if (Nome.equals("Insira o nome do cliente") || Nome.isEmpty()) {
+        public void setnome(String nome) {
+            if (nome.equals("Insira o nome do cliente") || nome.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "ERRO: Verifique o nome do cliente.");
             } else {
-                this.Nome = Nome;
+                this.nome = nome;
             }
         }
 
@@ -236,15 +135,15 @@ public class DTO {
             }
         }
 
-        public String getCPF() {           
-            return CPF;    
+        public String getcpf() {           
+            return cpf;    
         }
 
-        public void setCPF(String CPF) {
-            if (CPF.equals("   .   .   -  ")) {
-                JOptionPane.showMessageDialog(null, "ERRO: Verifique o CPF do cliente.");
+        public void setcpf(String cpf) {
+            if (cpf.equals("   .   .   -  ")) {
+                JOptionPane.showMessageDialog(null, "ERRO: Verifique o cpf do cliente.");
             } else {
-                this.CPF = CPF;
+                this.cpf = cpf;
             }
         }
 
@@ -268,15 +167,15 @@ public class DTO {
             }
         }
 
-        public String getSexo(){
-            return Sexo;
+        public String getgenero(){
+            return genero;
         }
 
-        public void setSexo(String Sexo) {
-            if (Sexo.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "ERRO: Verifique o sexo do cliente.");
+        public void setgenero(String genero) {
+            if (genero.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "ERRO: Verifique o genero do cliente.");
             } else {
-                this.Sexo = Sexo;
+                this.genero = genero;
             }
         }
     }

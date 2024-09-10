@@ -1,12 +1,8 @@
 package View;
 
-import View.Login;
-import View.Clientes;
-import View.WorkspaceFuncionario;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-import javax.swing.JOptionPane;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,14 +13,13 @@ import javax.swing.JOptionPane;
  *
  * @author Aluno.Tarde
  */
-public class WorkspaceAdministrador extends javax.swing.JFrame {
+public class WorkspaceFuncionario extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaAtendenteNova
      */
-    public WorkspaceAdministrador() {
+    public WorkspaceFuncionario() {
         initComponents();
-        
     }
 
     /**
@@ -36,11 +31,11 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        WorkspaceAdministrador = new javax.swing.JDesktopPane();
+        WorkspaceAtendente = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         JBClientes = new javax.swing.JButton();
         JBLogout = new javax.swing.JButton();
-        JBEstoque = new javax.swing.JButton();
+        JBVendas = new javax.swing.JButton();
         JBAjuda = new javax.swing.JButton();
         iconeStatus = new javax.swing.JPanel();
         Status = new javax.swing.JLabel();
@@ -67,7 +62,7 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
                 JBClientesActionPerformed(evt);
             }
         });
-        jPanel1.add(JBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 190, 50));
+        jPanel1.add(JBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 190, 50));
 
         JBLogout.setBackground(new java.awt.Color(51, 51, 51));
         JBLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -80,20 +75,20 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
                 JBLogoutActionPerformed(evt);
             }
         });
-        jPanel1.add(JBLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 190, 50));
+        jPanel1.add(JBLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 190, 50));
 
-        JBEstoque.setBackground(new java.awt.Color(51, 51, 51));
-        JBEstoque.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        JBEstoque.setForeground(new java.awt.Color(255, 255, 255));
-        JBEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.5.png"))); // NOI18N
-        JBEstoque.setText("Estoque");
-        JBEstoque.setBorder(null);
-        JBEstoque.addActionListener(new java.awt.event.ActionListener() {
+        JBVendas.setBackground(new java.awt.Color(51, 51, 51));
+        JBVendas.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        JBVendas.setForeground(new java.awt.Color(255, 255, 255));
+        JBVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.1.png"))); // NOI18N
+        JBVendas.setText("Vendas");
+        JBVendas.setBorder(null);
+        JBVendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEstoqueActionPerformed(evt);
+                JBVendasActionPerformed(evt);
             }
         });
-        jPanel1.add(JBEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 50));
+        jPanel1.add(JBVendas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 190, 50));
 
         JBAjuda.setBackground(new java.awt.Color(51, 51, 51));
         JBAjuda.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -106,7 +101,7 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
                 JBAjudaActionPerformed(evt);
             }
         });
-        jPanel1.add(JBAjuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 190, 50));
+        jPanel1.add(JBAjuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 190, 50));
 
         iconeStatus.setBackground(new java.awt.Color(0, 204, 0));
 
@@ -121,69 +116,67 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
             .addGap(0, 10, Short.MAX_VALUE)
         );
 
-        jPanel1.add(iconeStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 10, 10));
+        jPanel1.add(iconeStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 10, 10));
 
         Status.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Status.setForeground(new java.awt.Color(255, 255, 255));
         Status.setText("Conectado");
-        jPanel1.add(Status, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, 30));
+        jPanel1.add(Status, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, 30));
 
-        Atendente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/3.3.png"))); // NOI18N
-        jPanel1.add(Atendente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
+        Atendente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/3.1.png"))); // NOI18N
+        jPanel1.add(Atendente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
-        Quadrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/4.2.png"))); // NOI18N
-        jPanel1.add(Quadrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 720));
+        Quadrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/4.1.png"))); // NOI18N
+        jPanel1.add(Quadrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, -1));
 
-        Barra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/5.2.png"))); // NOI18N
-        jPanel1.add(Barra, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 1040, 720));
+        Barra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/5.1.png"))); // NOI18N
+        jPanel1.add(Barra, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 0, 1040, -1));
 
         Opções.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/6.1.png"))); // NOI18N
-        jPanel1.add(Opções, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, -1, -1));
+        jPanel1.add(Opções, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/9.1.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 700));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
 
-        WorkspaceAdministrador.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        WorkspaceAtendente.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout WorkspaceAdministradorLayout = new javax.swing.GroupLayout(WorkspaceAdministrador);
-        WorkspaceAdministrador.setLayout(WorkspaceAdministradorLayout);
-        WorkspaceAdministradorLayout.setHorizontalGroup(
-            WorkspaceAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout WorkspaceAtendenteLayout = new javax.swing.GroupLayout(WorkspaceAtendente);
+        WorkspaceAtendente.setLayout(WorkspaceAtendenteLayout);
+        WorkspaceAtendenteLayout.setHorizontalGroup(
+            WorkspaceAtendenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        WorkspaceAdministradorLayout.setVerticalGroup(
-            WorkspaceAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WorkspaceAdministradorLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        WorkspaceAtendenteLayout.setVerticalGroup(
+            WorkspaceAtendenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(WorkspaceAdministrador)
+            .addComponent(WorkspaceAtendente)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(WorkspaceAdministrador)
+            .addComponent(WorkspaceAtendente)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JBEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEstoqueActionPerformed
-        // TODO add your handling code here:
-        Estoque AdministrarEstoque = new Estoque();
-        WorkspaceAdministrador.add(AdministrarEstoque);     
-        AdministrarEstoque.setVisible(true);
-        AdministrarEstoque.setBounds(247, 97, 1035, 620);
-    }//GEN-LAST:event_JBEstoqueActionPerformed
+    private void JBVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVendasActionPerformed
+        // TODO add your handling code here:       
+        Caixa caixa = new Caixa();
+        WorkspaceAtendente.add(caixa);     
+        caixa.setVisible(true);
+        caixa.setBounds(247, 97, 1036, 657);
+    }//GEN-LAST:event_JBVendasActionPerformed
 
     private void JBClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBClientesActionPerformed
         // TODO add your handling code here:
         Clientes CadastrarClientes = new Clientes();
-        WorkspaceAdministrador.add(CadastrarClientes);     
+        WorkspaceAtendente.add(CadastrarClientes);     
         CadastrarClientes.setVisible(true); 
         CadastrarClientes.setBounds(247, 97, 1035, 620);
     }//GEN-LAST:event_JBClientesActionPerformed
@@ -220,20 +213,27 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(WorkspaceAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WorkspaceFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(WorkspaceAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WorkspaceFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(WorkspaceAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WorkspaceFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(WorkspaceAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(WorkspaceFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new WorkspaceAdministrador().setVisible(true);
+                new WorkspaceFuncionario().setVisible(true);
             }
         });
     }
@@ -243,12 +243,12 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel Barra;
     private javax.swing.JButton JBAjuda;
     private javax.swing.JButton JBClientes;
-    private javax.swing.JButton JBEstoque;
     private javax.swing.JButton JBLogout;
+    private javax.swing.JButton JBVendas;
     private javax.swing.JLabel Opções;
     private javax.swing.JLabel Quadrado;
     private javax.swing.JLabel Status;
-    public static javax.swing.JDesktopPane WorkspaceAdministrador;
+    public static javax.swing.JDesktopPane WorkspaceAtendente;
     private javax.swing.JPanel iconeStatus;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
