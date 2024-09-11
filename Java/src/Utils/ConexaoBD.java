@@ -1,7 +1,7 @@
 
 package Utils;
 
-import com.mysql.jdbc.Connection;
+import com.sun.jdi.connect.spi.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;

@@ -16,7 +16,6 @@ public class FuncionarioDTO {
     private String nome;
     private String cpf;
     private String dataNascimento;
-    
     private String genero;
     private String email;
     private String password;

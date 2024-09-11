@@ -14,7 +14,7 @@ public class ConexaoCi {
     Connection conn;
     
     public int AdicionarFuncionario(FuncionarioDTO funcionarioDTO){
-            conn = new ConexaoBD().ConectaBD();
+            conn = (Connection) new ConexaoBD().ConectaBD();
             int generatedKey = -1;
             try {
                 String sql = "INSERT INTO funcionario (tipo, nome, cpf, dataNascimento, genero, email, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -41,7 +41,7 @@ public class ConexaoCi {
     }
     
     public int AdicionarCliente(DTO.ClienteDTO clienteDTO){
-            conn = new ConexaoBD().ConectaBD();
+            conn = (Connection) new ConexaoBD().ConectaBD();
             int generatedKey = -1;
             try {
                 String sql = "INSERT INTO cliente (nome, cpf, Telefone, dataNascimento, genero) VALUES (?, ?, ?, ?, ?)";
@@ -65,7 +65,7 @@ public class ConexaoCi {
     
     public int AdicionarEstoque(DTO.ProdutoDTO produtoDTO){
         if (produtoDTO.getQuantidade() > 0){
-            conn = new ConexaoBD().ConectaBD();
+            conn = (Connection) new ConexaoBD().ConectaBD();
             int generatedKey = -1;
             try{
                 String sql = "Insert into estoque (nome, Tamanho, Quantidade, Preco) Values (?, ?, ?, ?)";
@@ -90,7 +90,7 @@ public class ConexaoCi {
     }
     
     public int AdicionarVendas(DTO.VendaDTO vendaDTO){
-        conn = new ConexaoBD().ConectaBD();   
+        conn = (Connection) new ConexaoBD().ConectaBD();   
         
         int generatedKey = -1;
         try{
@@ -118,7 +118,7 @@ public class ConexaoCi {
     }
     
     public int AdicionarItens(DTO.ProdutoDTO produtoDTO, int NotaFiscal){
-        conn = new ConexaoBD().ConectaBD();   
+        conn = (Connection) new ConexaoBD().ConectaBD();   
         DTO dto = new DTO();
         DTO.VendaDTO vendaDTO = dto.new VendaDTO();
         int generatedKey = -1;
@@ -144,7 +144,7 @@ public class ConexaoCi {
     
     public Boolean VerificarEstoque(DTO.ProdutoDTO produtoDTO){
         if (produtoDTO.getQuantidade() > 0){
-            conn = new ConexaoBD().ConectaBD();       
+            conn = (Connection) new ConexaoBD().ConectaBD();       
             try{
                 String sql = "Select nome, Tamanho, Quantidade, Preco from estoque where idFuncionario = ?";
                 PreparedStatement pstm = conn.prepareStatement(sql);
@@ -175,7 +175,7 @@ public class ConexaoCi {
     }
     
     public Boolean VerificarCliente(DTO.ClienteDTO clienteDTO){
-        conn = new ConexaoBD().ConectaBD();       
+        conn = (Connection) new ConexaoBD().ConectaBD();       
         try{
             String sql = "SELECT * FROM cliente WHERE cpf = ?";
             PreparedStatement pstm = conn.prepareStatement(sql);
@@ -212,7 +212,7 @@ public class ConexaoCi {
     }
 
     public Boolean VerificarAdministrador(FuncionarioDTO dadosDTO){
-        conn = new ConexaoBD().ConectaBD();       
+        conn = (Connection) new ConexaoBD().ConectaBD();       
         try{
             String sql = "SELECT email, password FROM funcionario WHERE tipo =  'Administrador' and email =? and password =?";
             PreparedStatement pstm = conn.prepareStatement(sql);
@@ -231,7 +231,7 @@ public class ConexaoCi {
     }
 
     public Boolean VerificarGerente(FuncionarioDTO dadosDTO){
-        conn = new ConexaoBD().ConectaBD();       
+        conn = (Connection) new ConexaoBD().ConectaBD();       
         try{
             String sql = "SELECT email, password FROM funcionario WHERE tipo =  'Gerente' and email =? and password =?";
             PreparedStatement pstm = conn.prepareStatement(sql);

@@ -238,33 +238,54 @@ public class Login extends javax.swing.JFrame {
 //           jTpassword.setEchoChar('\u25cf');
 //           jTpassword.setForeground(Color.gray);
 //           jCMostrarpassword.setSelected(false);           
-//        }      
+//        }
 
-        //Código 2
         String email = jTemail.getText();
-        String senha = String.valueOf(jTpassword.getPassword());
+        String senha = new String(jTpassword.getPassword());
 
+        // Cria um DTO para enviar as credenciais
         FuncionarioDTO funcionarioDTO = new FuncionarioDTO();
         funcionarioDTO.setEmail(email);
         funcionarioDTO.setPassword(senha);
 
-        HttpConnection httpClient = new HttpConnection();
-        FuncionarioDTO responseDTO = httpClient.sendLoginRequest(funcionarioDTO);
+        // Instancia o cliente de login
+        HttpConnection loginClient = new HttpConnection();
 
-        if (responseDTO != null && responseDTO.getTipo() != null) {
-            if (responseDTO.getTipo().equals("VETERINARIO")) {
+        // Chama o método de login
+        FuncionarioDTO response = loginClient.sendLoginRequest(funcionarioDTO);
+        
+        if (response != null) {
+            String tipo = response.getTipo();
+//            Verifica se o tipo de funcionário e exibi a workspace correspondente
+            switch (tipo) {
+            case "ADMINISTRADOR":
+                WorkspaceAdministrador workspaceAdministrador = new WorkspaceAdministrador();
+                workspaceAdministrador.setVisible(true);
+                dispose();
+                break;
+            case "VETERINARIO":
                 WorkspaceVeterinario workspaceVeterinario = new WorkspaceVeterinario();
                 workspaceVeterinario.setVisible(true);
                 dispose();
-            } else if (responseDTO.getTipo().equals("ADMINISTRATIVO")) {
-                
-            } else {
-                
+                break;
+            case "FUNCIONARIO":
+                WorkspaceFuncionario workspaceFuncionario = new WorkspaceFuncionario();
+                workspaceFuncionario.setVisible(true);
+                dispose();
+                break;
+            default:
+                System.out.println("Tipo de funcionário desconhecido.");
+                break;
             }
         } else {
+            System.out.print(response);
             JOptionPane.showMessageDialog(null, "Email ou password incorreto! Por favor tente novamente.");
+            jTemail.setText("Insira o seu nome de usuário");
+            jTpassword.setText("@abcdefghijk");
+            jTpassword.setEchoChar('\u25cf');
+            jTpassword.setForeground(Color.gray);
+            jCMostrarpassword.setSelected(false);   
         }
-    
     }//GEN-LAST:event_jBLoginActionPerformed
     
     private void jButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton1KeyPressed

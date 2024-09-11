@@ -19,75 +19,34 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
 public class HttpConnection {
-    // Cria variáveis final, pois será imutável para serem reutilizadas
-    private final String apiUrl = "http://localhost:8081/api/funcionario/LoginFuncionario";
-    
+    // Define a Url da API e o mapper 
+    private final String apiUrl = "http://localhost:8081/api/funcionario/LoginNormal";
     private final ObjectMapper mapper = new ObjectMapper();
-    // Cria o ObjectMapper para conversão entre DTO e JSON
     
-    //Código 1
-    // Método que realiza o login e retorna FuncionarioDTO com a função
-//    public FuncionarioDTO login(FuncionarioDTO funcionarioDTO) {
-//        HttpURLConnection conn = null;
-//        try {
-//            // Url contendo o endpoint da API login
-//            URL url = new URL(apiUrl + "/api/funcionario/");
-//            // Abre a conexão http
-//            conn = (HttpURLConnection) url.openConnection();
-//            // Define o http como POST
-//            conn.setRequestMethod("POST");
-//            // Define o tipo de conteúdo como JSON
-//            conn.setRequestProperty("Content-Type", "application/json");
-//            // Permite o envio de solicitação
-//            conn.setDoOutput(true);
-//
-//            // Converte o FuncionarioDTO em String Json usando o ObjectMapper
-//            String inputJson = mapper.writeValueAsString(funcionarioDTO);
-//
-//            // Envia a solicitação
-//            try (OutputStream os = conn.getOutputStream()) {
-//                os.write(inputJson.getBytes());
-//                os.flush();
-//            }
-//
-////            Verifica se deu 200 (OK)
-//            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
-////                Lê a resposta do servidor
-//                try (InputStream is = conn.getInputStream()) {
-////                    Converte a resposta Json em FuncionarioDTO
-//                    funcionarioDTO = mapper.readValue(is, FuncionarioDTO.class);
-//                }
-//            } else {
-//                System.err.println("Erro na resposta: " + conn.getResponseCode());
-//            }
-//        } catch (Exception e) {
-//            System.out.println("ERRO: "+ e);
-//        } finally {
-//            if (conn != null) {
-//                // Garante que a conexão seja desconectada
-//                conn.disconnect();
-//            }
-//        }
-//        // Retorna funcionarioDTO contendo a função
-//        return funcionarioDTO;
-//    }
-    
-    //Código 2
+    // Método para efetuar o login
     public FuncionarioDTO sendLoginRequest(FuncionarioDTO funcionarioDTO) {
+        // Garante que nenhuma conexao tenha feita antes
         HttpURLConnection conn = null;
         try {
             URL url = new URL(apiUrl);
+            // Abre a conexão com a API
             conn = (HttpURLConnection) url.openConnection();
+            // Define o modelo de requisição como POST
             conn.setRequestMethod("POST");
+            // Define o type da requisição
             conn.setRequestProperty("Content-Type", "application/json");
+            // Permiti o envio de requisições
             conn.setDoOutput(true);
 
+            // Converte o funcionarioDTO em uma String JSON
             String inputJson = mapper.writeValueAsString(funcionarioDTO);
+            // Efetua a requisição
             try (OutputStream os = conn.getOutputStream()) {
                 os.write(inputJson.getBytes());
                 os.flush();
             }
-
+            
+            // Verifica se deu OK
             if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
                     StringBuilder response = new StringBuilder();
@@ -95,9 +54,8 @@ public class HttpConnection {
                     while ((line = br.readLine()) != null) {
                         response.append(line);
                     }
-                    if (response.length() > 0) {
-                        return mapper.readValue(response.toString(), FuncionarioDTO.class);
-                    }
+                    // Converte a resposta JSON para FuncionarioModel
+                    return mapper.readValue(response.toString(), FuncionarioDTO.class);
                 }
             } else {
                 System.err.println("Erro na resposta: " + conn.getResponseCode());
