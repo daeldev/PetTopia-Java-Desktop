@@ -197,56 +197,13 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jTemailActionPerformed
 
     private void jBLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLoginActionPerformed
-        //Código 1
-//        //Armazena os dados dos textfields
-//        String email = jTemail.getText();
-//        String password = String.valueOf(jTpassword.getPassword());
-//        
-//        //Envia os dados para o funcionarioDTO
-//        FuncionarioDTO funcionarioDTO = new FuncionarioDTO();
-//        funcionarioDTO.setEmail(email);
-//        funcionarioDTO.setPassword(password);
-//        
-//        //Instacia o httpConnection
-//        HttpConnection httpConnection = new HttpConnection();
-//        //Envia o funcionarioDTO para o método login do httpConnection, retornando a resposta que vai conter o tipo de funcionário
-//        funcionarioDTO = httpConnection.login(funcionarioDTO);
-//        //Verifica se o funcionarioDTO retornado não é nulo
-//        if (funcionarioDTO != null) {
-//            //Verifica se o tipo de funcionário e exibi a workspace correspondente
-//            if(funcionarioDTO.getTipo().equals("ADMINISTRADOR")){
-//                WorkspaceAdministrador workspaceAdministrador = new WorkspaceAdministrador();
-//                workspaceAdministrador.setVisible(true);
-//                dispose();
-//            }
-//            if(funcionarioDTO.getTipo().equals("FUNCIONARIO")){
-//                WorkspaceFuncionario workspaceFuncionario = new WorkspaceFuncionario();
-//                workspaceFuncionario.setVisible(true);
-//                dispose();
-//            }
-//            if(funcionarioDTO.getTipo().equals("VETERINARIO")){
-//                WorkspaceVeterinario workspaceVeterinario = new WorkspaceVeterinario();
-//                workspaceVeterinario.setVisible(true);
-//                dispose();
-//            }
-//        //Caso o funcionarioDTO seja nulo, exibi no console, lança um JOptionPane e reseta os textfields
-//        }else{
-//           System.out.print("funcionarioDTO nulo");
-//           JOptionPane.showMessageDialog(null, "Email ou password incorreto! Por favor tente novamente.");
-//           jTemail.setText("Insira o seu nome de usuário");
-//           jTpassword.setText("@abcdefghijk");
-//           jTpassword.setEchoChar('\u25cf');
-//           jTpassword.setForeground(Color.gray);
-//           jCMostrarpassword.setSelected(false);           
-//        }
-
         String email = jTemail.getText();
         String senha = new String(jTpassword.getPassword());
 
         // Cria um DTO para enviar as credenciais
         FuncionarioDTO funcionarioDTO = new FuncionarioDTO();
         funcionarioDTO.setEmail(email);
-        funcionarioDTO.setPassword(senha);
+        funcionarioDTO.setPasswordFuncionario(senha);
 
         // Instancia o cliente de login
         HttpConnection loginClient = new HttpConnection();
@@ -255,7 +212,7 @@ public class Login extends javax.swing.JFrame {
         FuncionarioDTO response = loginClient.sendLoginRequest(funcionarioDTO);
         
         if (response != null) {
-            String tipo = response.getTipo();
+            String tipo = response.getTipoFuncionario();
 //            Verifica se o tipo de funcionário e exibi a workspace correspondente
             switch (tipo) {
             case "ADMINISTRADOR":

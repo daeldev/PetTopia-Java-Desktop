@@ -19,34 +19,24 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
 public class HttpConnection {
-    // Define a Url da API e o mapper 
     private final String apiUrl = "http://localhost:8081/api/funcionario/LoginNormal";
     private final ObjectMapper mapper = new ObjectMapper();
-    
-    // Método para efetuar o login
+
     public FuncionarioDTO sendLoginRequest(FuncionarioDTO funcionarioDTO) {
-        // Garante que nenhuma conexao tenha feita antes
         HttpURLConnection conn = null;
         try {
             URL url = new URL(apiUrl);
-            // Abre a conexão com a API
             conn = (HttpURLConnection) url.openConnection();
-            // Define o modelo de requisição como POST
             conn.setRequestMethod("POST");
-            // Define o type da requisição
             conn.setRequestProperty("Content-Type", "application/json");
-            // Permiti o envio de requisições
             conn.setDoOutput(true);
 
-            // Converte o funcionarioDTO em uma String JSON
             String inputJson = mapper.writeValueAsString(funcionarioDTO);
-            // Efetua a requisição
             try (OutputStream os = conn.getOutputStream()) {
                 os.write(inputJson.getBytes());
                 os.flush();
             }
-            
-            // Verifica se deu OK
+
             if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
                     StringBuilder response = new StringBuilder();

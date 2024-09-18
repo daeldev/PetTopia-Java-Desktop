@@ -59,7 +59,7 @@ public class Validador {
         return true;
     }
     
-    public boolean validarDataNascimento(String dataNascimento) {
+    public boolean validarData(String dataNascimento) {
         // Definir o formato esperado para a data (ex: "dd/MM/yyyy")
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 

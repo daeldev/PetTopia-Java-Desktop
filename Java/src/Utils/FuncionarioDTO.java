@@ -11,113 +11,126 @@ import javax.swing.JOptionPane;
  * @author Oliveira
  */
 public class FuncionarioDTO {
-    private int idFuncionario;
-    private String tipo;
-    private String nome;
-    private String cpf;
+    private int id_funcionario;
+    private String nome_funcionario;
+    private String cpf_funcionario;
     private String dataNascimento;
-    private String genero;
+    private String generoFuncionario;
     private String email;
-    private String password;
+    private String passwordFuncionario;
+    private String data_emissao;
+    private String tipoFuncionario;
+    
+    public FuncionarioDTO(String email, String passwordFuncionario) {
+        this.email = email;
+        this.passwordFuncionario = passwordFuncionario;
+    }
+    
+    public FuncionarioDTO(){
+        
+    }
     
     Validador validador = new Validador();
+    public int getId_funcionario() {
+        return id_funcionario;
+    }
 
-    public void setNome(String nome) {
-        // Expressão regular para verificar se o nome contém apenas letras e espaços
-        String nomeRegex = "^[a-zA-ZÀ-ÿ\\s]+$"; 
+    public void setId_funcionario(int id_funcionario) {
+        this.id_funcionario = id_funcionario;
+    }
 
-        if (nome != null && nome.trim().matches(nomeRegex) && nome.length() >= 2) {
-            this.nome = nome.trim(); // Remove espaços extras no início ou fim
+    public String getNome_funcionario() {
+        return nome_funcionario;
+    }
+
+    public void setNome_funcionario(String nome_funcionario) {
+        // Expressão regular para verificar se o nome_funcionario contém apenas letras e espaços
+        String nome_funcionarioRegex = "^[a-zA-ZÀ-ÿ\\s]+$"; 
+
+        if (nome_funcionario != null && nome_funcionario.trim().matches(nome_funcionarioRegex) && nome_funcionario.length() >= 2) {
+            this.nome_funcionario = nome_funcionario.trim(); // Remove espaços extras no início ou fim
         } else {
-            JOptionPane.showMessageDialog(null, "ERRO: Verifique o nome do funcionário. O nome deve conter apenas letras e ter ao menos 2 caracteres.");
+            JOptionPane.showMessageDialog(null, "ERRO: Verifique o nome_funcionario do funcionário. O nome_funcionario deve conter apenas letras e ter ao menos 2 caracteres.");
         }
     }
 
-    public void setEmail(String email) {
-        // Expressão regular para validar o formato de email
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-
-        if (email != null && email.trim().matches(emailRegex)) {
-            this.email = email.trim();
-        } else {
-            JOptionPane.showMessageDialog(null, "ERRO: Verifique o email do funcionário. O email deve estar em um formato válido.");
-        }
+    public String getCpf_funcionario() {
+        return cpf_funcionario;
     }
 
-    public void setPassword(String password) {
-        if (!password.isEmpty()) {
-            this.password = password;
-        } else {
-            JOptionPane.showMessageDialog(null, "ERRO: Verifique a password do funcionário.");
-        }
-    }
-
-    public void setCpf(String cpf) {
-        
-        if (cpf != null && cpf.matches("\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")) {
-            if (validador.validarCpf(cpf)){
-                this.cpf = cpf;
-            } else {
-                JOptionPane.showMessageDialog(null, "ERRO: O CPF informado é inválido.");
+    public void setCpf_funcionario(String cpf_funcionario) {
+        if (cpf_funcionario != null && cpf_funcionario.matches("\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")) {
+            if (validador.validarCpf(cpf_funcionario)){
+                this.cpf_funcionario = cpf_funcionario;
             }
         } else {
             JOptionPane.showMessageDialog(null, "ERRO: Verifique o CPF do funcionário. O CPF deve estar no formato XXX.XXX.XXX-XX.");
         }
     }
 
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
     public void setDataNascimento(String dataNascimento) {
-        if (validador.validarDataNascimento(dataNascimento)) {
+        if (validador.validarData(dataNascimento)) {
             this.dataNascimento = dataNascimento;
         } else {
             JOptionPane.showMessageDialog(null, "ERRO: Verifique a data de nascimento do funcionário.");
         }
     }
 
-    public void setTipo(String tipo) {
-        if (!tipo.isEmpty()) {
-            this.tipo = tipo;
-        } else {
-            JOptionPane.showMessageDialog(null, "ERRO: Verifique a função do funcionário.");
-        }
+    public String getGeneroFuncionario() {
+        return generoFuncionario;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public void setIdFuncionario(int idFuncionario) {
-        this.idFuncionario = idFuncionario;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public String getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public String getGenero() {
-        return genero;
+    public void setGeneroFuncionario(String generoFuncionario) {
+        this.generoFuncionario = generoFuncionario;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public String getPassword() {
-        return password;
+    public void setEmail(String email) {
+        if (email != null && email.trim().matches(email)) {
+            this.email = email.trim();
+        } else {
+            JOptionPane.showMessageDialog(null, "ERRO: Verifique o email do funcionário.");
+        }
     }
 
-    public int getidFuncionario() {
-        return idFuncionario;
+    public String getPasswordFuncionario() {
+        return passwordFuncionario;
+    }
+
+    public void setPasswordFuncionario(String passwordFuncionario) {
+        if (!passwordFuncionario.isEmpty()) {
+            this.passwordFuncionario = passwordFuncionario;
+        } else {
+            JOptionPane.showMessageDialog(null, "ERRO: Verifique a senha do funcionário.");
+        }
+    }
+
+    public String getData_emissao() {
+        return data_emissao;
+    }
+
+    public void setData_emissao(String data_emissao) {
+        if (validador.validarData(data_emissao)) {
+            this.data_emissao = data_emissao;
+        }
+    }
+
+    public String getTipoFuncionario() {
+        return tipoFuncionario;
+    }
+
+    public void setTipoFuncionario(String tipoFuncionario) {
+        if (!tipoFuncionario.isEmpty()) {
+            this.tipoFuncionario = tipoFuncionario;
+        } else {
+            JOptionPane.showMessageDialog(null, "ERRO: Verifique a função do funcionário.");
+        }
     }
 }

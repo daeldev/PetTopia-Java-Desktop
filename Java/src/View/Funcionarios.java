@@ -10,7 +10,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import Utils.DTO;
 import Utils.FuncionarioDTO;
 
 /*
@@ -276,13 +275,13 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         FuncionarioDTO funcionarioDTO = new FuncionarioDTO();
         
         //Seta os dados fornecidos para o FuncionarioDTO
-        funcionarioDTO.setTipo(JCtipo.getSelectedItem().toString());
-        funcionarioDTO.setNome(JTnome.getText());       
-        funcionarioDTO.setCpf(JTcpf.getText());
+        funcionarioDTO.setTipoFuncionario(JCtipo.getSelectedItem().toString());
+        funcionarioDTO.setNome_funcionario(JTnome.getText());       
+        funcionarioDTO.setCpf_funcionario(JTcpf.getText());
         funcionarioDTO.setDataNascimento(JTData.getText());
-        funcionarioDTO.setGenero(JCgenero.getSelectedItem().toString());
+        funcionarioDTO.setGeneroFuncionario(JCgenero.getSelectedItem().toString());
         funcionarioDTO.setEmail(JTemail.getText());
-        funcionarioDTO.setPassword(JTpassword.getText());
+        funcionarioDTO.setPasswordFuncionario(JTpassword.getText());
         
         //Instância a classe ConexaoCi
         ConexaoCi funcionarioDAO = new ConexaoCi();
@@ -294,7 +293,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         if(Resultado != -1){
             //Grava os dados setados na classe funcionarioDTO para a tabela de cadastros através de um vetor
             DefaultTableModel Tabela = (DefaultTableModel) JTFuncionarios.getModel();
-            Object[] dados = {funcionarioDTO.getTipo(), funcionarioDTO.getNome(), funcionarioDTO.getCpf(), funcionarioDTO.getDataNascimento(), funcionarioDTO.getGenero(), funcionarioDTO.getidFuncionario()};
+            Object[] dados = {funcionarioDTO.getTipoFuncionario(), funcionarioDTO.getNome_funcionario(), funcionarioDTO.getCpf_funcionario(), funcionarioDTO.getDataNascimento(), funcionarioDTO.getGeneroFuncionario(), funcionarioDTO.getId_funcionario()};
             Tabela.addRow(dados);
         }                                             
     }//GEN-LAST:event_JBAdicionarActionPerformed
