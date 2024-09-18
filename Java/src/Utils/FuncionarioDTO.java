@@ -4,6 +4,7 @@
  */
 package Utils;
 
+import java.time.LocalDate;
 import javax.swing.JOptionPane;
 
 /**
@@ -113,13 +114,12 @@ public class FuncionarioDTO {
     }
 
     public String getData_emissao() {
-        return data_emissao;
+        LocalDate dataAtual = LocalDate.now();
+        return dataAtual.toString();
     }
 
     public void setData_emissao(String data_emissao) {
-        if (validador.validarData(data_emissao)) {
-            this.data_emissao = data_emissao;
-        }
+        
     }
 
     public String getTipoFuncionario() {

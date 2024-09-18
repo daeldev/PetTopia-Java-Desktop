@@ -88,7 +88,7 @@ public class Vendas extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Data", "Cliente", "Telefone", "cpf", "Produto", "Tamanho", "Quantidade", "Nota fiscal", "Total"
+                "Data", "Cliente", "Telefone", "CPF", "Produto", "Tamanho", "Quantidade", "Nota fiscal", "Total"
             }
         ) {
             boolean[] canEdit = new boolean [] {
