@@ -17,21 +17,20 @@ public class ConexaoCi {
             conn = (Connection) new ConexaoBD().ConectaBD();
             int generatedKey = -1;
             try {
-                String sql = "INSERT INTO funcionario (tipo, nome, cpf, dataNascimento, genero, email, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                String sql = "INSERT INTO funcionario (tipo, nome, cpf, dataNascimento, email, password) VALUES (?, ?, ?, ?, ?, ?)";
                 PreparedStatement pstm = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-                pstm.setString(1, funcionarioDTO.getTipo());
-                pstm.setString(2, funcionarioDTO.getNome());
-                pstm.setString(3, funcionarioDTO.getCpf());
+                pstm.setString(1, funcionarioDTO.getTipoFuncionario());
+                pstm.setString(2, funcionarioDTO.getNome_funcionario());
+                pstm.setString(3, funcionarioDTO.getCpf_funcionario());
                 pstm.setString(4, funcionarioDTO.getDataNascimento());
-                pstm.setString(5, funcionarioDTO.getGenero());
                 pstm.setString(6, funcionarioDTO.getEmail());
-                pstm.setString(7, funcionarioDTO.getPassword());
+                pstm.setString(7, funcionarioDTO.getPasswordFuncionario());
 
                 int rs = pstm.executeUpdate();
 
                 ResultSet generatedKeys = pstm.getGeneratedKeys();
                 if (generatedKeys.next()) {
-                    funcionarioDTO.setIdFuncionario(generatedKey = generatedKeys.getInt(1));
+                    funcionarioDTO.setId_funcionario(generatedKey = generatedKeys.getInt(1));
                 }
                 return rs;
             } catch (SQLException erro) {
@@ -197,7 +196,7 @@ public class ConexaoCi {
             String sql = "SELECT email, password FROM funcionario WHERE tipo =  'Atendente' and email =? and password =?";
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, dadosDTO.getEmail());
-            pstm.setString(2, dadosDTO.getPassword()); 
+            pstm.setString(2, dadosDTO.getPasswordFuncionario()); 
             
             ResultSet rs = pstm.executeQuery();
             if (rs.next()){       
@@ -217,7 +216,7 @@ public class ConexaoCi {
             String sql = "SELECT email, password FROM funcionario WHERE tipo =  'Administrador' and email =? and password =?";
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, dadosDTO.getEmail());
-            pstm.setString(2, dadosDTO.getPassword()); 
+            pstm.setString(2, dadosDTO.getPasswordFuncionario()); 
             ResultSet rs = pstm.executeQuery();
             if (rs.next()){       
                 return true;   
@@ -236,7 +235,7 @@ public class ConexaoCi {
             String sql = "SELECT email, password FROM funcionario WHERE tipo =  'Gerente' and email =? and password =?";
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, dadosDTO.getEmail());
-            pstm.setString(2, dadosDTO.getPassword()); 
+            pstm.setString(2, dadosDTO.getPasswordFuncionario()); 
             
             ResultSet rs = pstm.executeQuery();
             if (rs.next()){       
