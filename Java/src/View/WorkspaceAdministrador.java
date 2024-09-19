@@ -1,8 +1,10 @@
 package View;
 
+import Utils.FuncionarioDTO;
 import View.Login;
 import View.Clientes;
 import View.WorkspaceFuncionario;
+import java.awt.Color;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import javax.swing.JOptionPane;
@@ -22,9 +24,13 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
     /**
      * Creates new form TelaAtendenteNova
      */
+    
+    public void ExibirDados(FuncionarioDTO funcionarioDTO){
+        jLNome.setText(funcionarioDTO.getNome_funcionario() + "!");
+    }
+    
     public WorkspaceAdministrador() {
         initComponents();
-        
     }
 
     /**
@@ -38,16 +44,29 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
 
         WorkspaceAdministrador = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLFuncionariosAtivos2 = new javax.swing.JLabel();
+        jLVisualizarFuncionarios2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLFuncionariosAtivos1 = new javax.swing.JLabel();
+        jLVisualizarFuncionarios1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLFuncionariosAtivos = new javax.swing.JLabel();
+        jLVisualizarFuncionarios = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        JBFuncionarios = new javax.swing.JButton();
         JBClientes = new javax.swing.JButton();
-        JBLogout = new javax.swing.JButton();
         JBEstoque = new javax.swing.JButton();
+        JBLogout = new javax.swing.JButton();
         JBAjuda = new javax.swing.JButton();
-        iconeStatus = new javax.swing.JPanel();
-        Status = new javax.swing.JLabel();
-        Atendente = new javax.swing.JLabel();
-        Quadrado = new javax.swing.JLabel();
-        Barra = new javax.swing.JLabel();
-        Opções = new javax.swing.JLabel();
+        jLNome = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,31 +75,116 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel5.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Clientes cadastrados");
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 140, 20));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.2.png"))); // NOI18N
+        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 56, -1, -1));
+
+        jLFuncionariosAtivos2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLFuncionariosAtivos2.setForeground(new java.awt.Color(255, 255, 255));
+        jLFuncionariosAtivos2.setText("632623532");
+        jPanel5.add(jLFuncionariosAtivos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 140, 20));
+
+        jLVisualizarFuncionarios2.setForeground(new java.awt.Color(255, 255, 255));
+        jLVisualizarFuncionarios2.setText("Visualizar");
+        jPanel5.add(jLVisualizarFuncionarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 60, 20));
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 70, 300, 160));
+
+        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Funcionários cadastrados");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 170, 20));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.2.png"))); // NOI18N
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 56, -1, -1));
+
+        jLFuncionariosAtivos1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLFuncionariosAtivos1.setForeground(new java.awt.Color(255, 255, 255));
+        jLFuncionariosAtivos1.setText("632623532");
+        jPanel4.add(jLFuncionariosAtivos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 140, 20));
+
+        jLVisualizarFuncionarios1.setForeground(new java.awt.Color(255, 255, 255));
+        jLVisualizarFuncionarios1.setText("Visualizar");
+        jPanel4.add(jLVisualizarFuncionarios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 60, 20));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 300, 160));
+
+        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Funcionários ativos");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 130, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.2.png"))); // NOI18N
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 56, -1, -1));
+
+        jLFuncionariosAtivos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLFuncionariosAtivos.setForeground(new java.awt.Color(255, 255, 255));
+        jLFuncionariosAtivos.setText("632623532");
+        jPanel3.add(jLFuncionariosAtivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 140, 20));
+
+        jLVisualizarFuncionarios.setForeground(new java.awt.Color(255, 255, 255));
+        jLVisualizarFuncionarios.setText("Visualizar");
+        jPanel3.add(jLVisualizarFuncionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 60, 20));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 300, 160));
+
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JBFuncionarios.setBackground(new java.awt.Color(51, 51, 51));
+        JBFuncionarios.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        JBFuncionarios.setForeground(new java.awt.Color(255, 255, 255));
+        JBFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.7.png"))); // NOI18N
+        JBFuncionarios.setText("Funcionários");
+        JBFuncionarios.setBorder(null);
+        JBFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JBFuncionariosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBFuncionariosMouseExited(evt);
+            }
+        });
+        JBFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBFuncionariosActionPerformed(evt);
+            }
+        });
+        jPanel2.add(JBFuncionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 240, 50));
+
         JBClientes.setBackground(new java.awt.Color(51, 51, 51));
         JBClientes.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         JBClientes.setForeground(new java.awt.Color(255, 255, 255));
         JBClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.2.png"))); // NOI18N
         JBClientes.setText("Clientes");
         JBClientes.setBorder(null);
+        JBClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JBClientesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBClientesMouseExited(evt);
+            }
+        });
         JBClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBClientesActionPerformed(evt);
             }
         });
-        jPanel1.add(JBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 190, 50));
-
-        JBLogout.setBackground(new java.awt.Color(51, 51, 51));
-        JBLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        JBLogout.setForeground(new java.awt.Color(255, 255, 255));
-        JBLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.4.png"))); // NOI18N
-        JBLogout.setText("Logout");
-        JBLogout.setBorder(null);
-        JBLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBLogoutActionPerformed(evt);
-            }
-        });
-        jPanel1.add(JBLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 190, 50));
+        jPanel2.add(JBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 370, 290, 50));
 
         JBEstoque.setBackground(new java.awt.Color(51, 51, 51));
         JBEstoque.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -88,12 +192,41 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         JBEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.5.png"))); // NOI18N
         JBEstoque.setText("Estoque");
         JBEstoque.setBorder(null);
+        JBEstoque.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JBEstoqueMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBEstoqueMouseExited(evt);
+            }
+        });
         JBEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBEstoqueActionPerformed(evt);
             }
         });
-        jPanel1.add(JBEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 190, 50));
+        jPanel2.add(JBEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 290, 280, 50));
+
+        JBLogout.setBackground(new java.awt.Color(51, 51, 51));
+        JBLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        JBLogout.setForeground(new java.awt.Color(255, 255, 255));
+        JBLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.4.png"))); // NOI18N
+        JBLogout.setText("Logout");
+        JBLogout.setBorder(null);
+        JBLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JBLogoutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBLogoutMouseExited(evt);
+            }
+        });
+        JBLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBLogoutActionPerformed(evt);
+            }
+        });
+        jPanel2.add(JBLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 640, 300, 50));
 
         JBAjuda.setBackground(new java.awt.Color(51, 51, 51));
         JBAjuda.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -101,44 +234,31 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         JBAjuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.3.png"))); // NOI18N
         JBAjuda.setText("Ajuda");
         JBAjuda.setBorder(null);
+        JBAjuda.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JBAjudaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBAjudaMouseExited(evt);
+            }
+        });
         JBAjuda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBAjudaActionPerformed(evt);
             }
         });
-        jPanel1.add(JBAjuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 190, 50));
+        jPanel2.add(JBAjuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 450, 320, 50));
 
-        iconeStatus.setBackground(new java.awt.Color(0, 204, 0));
+        jLNome.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLNome.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(jLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 180, 40));
 
-        javax.swing.GroupLayout iconeStatusLayout = new javax.swing.GroupLayout(iconeStatus);
-        iconeStatus.setLayout(iconeStatusLayout);
-        iconeStatusLayout.setHorizontalGroup(
-            iconeStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
-        iconeStatusLayout.setVerticalGroup(
-            iconeStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 10, Short.MAX_VALUE)
-        );
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Seja bem-vindo");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 110, 20));
 
-        jPanel1.add(iconeStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 10, 10));
-
-        Status.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Status.setForeground(new java.awt.Color(255, 255, 255));
-        Status.setText("Conectado");
-        jPanel1.add(Status, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, 30));
-
-        Atendente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/3.3.png"))); // NOI18N
-        jPanel1.add(Atendente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
-
-        Quadrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/4.2.png"))); // NOI18N
-        jPanel1.add(Quadrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 720));
-
-        Barra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/5.2.png"))); // NOI18N
-        jPanel1.add(Barra, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 1040, 720));
-
-        Opções.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/6.1.png"))); // NOI18N
-        jPanel1.add(Opções, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, -1, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 770));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/9.1.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 700));
@@ -153,9 +273,7 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         );
         WorkspaceAdministradorLayout.setVerticalGroup(
             WorkspaceAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WorkspaceAdministradorLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -203,6 +321,65 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_JBLogoutActionPerformed
 
+    private void JBFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBFuncionariosActionPerformed
+        // TODO add your handling code here:
+        Funcionarios GerenciarFuncionários;
+        GerenciarFuncionários = new Funcionarios();
+        WorkspaceAdministrador.add(GerenciarFuncionários);
+        GerenciarFuncionários.setVisible(true);
+        GerenciarFuncionários.setBounds(247, -30, 1035, 1000);
+    }//GEN-LAST:event_JBFuncionariosActionPerformed
+
+    private void JBFuncionariosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBFuncionariosMouseEntered
+        // TODO add your handling code here:
+        JBFuncionarios.setBackground(new java.awt.Color(102,102,102));
+    }//GEN-LAST:event_JBFuncionariosMouseEntered
+
+    private void JBFuncionariosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBFuncionariosMouseExited
+        // TODO add your handling code here:
+        JBFuncionarios.setBackground(new java.awt.Color(51,51,51));
+    }//GEN-LAST:event_JBFuncionariosMouseExited
+
+    private void JBEstoqueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBEstoqueMouseEntered
+        // TODO add your handling code here:
+        JBEstoque.setBackground(new java.awt.Color(102,102,102));
+    }//GEN-LAST:event_JBEstoqueMouseEntered
+
+    private void JBEstoqueMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBEstoqueMouseExited
+        // TODO add your handling code here:
+        JBEstoque.setBackground(new java.awt.Color(51,51,51));
+    }//GEN-LAST:event_JBEstoqueMouseExited
+
+    private void JBClientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBClientesMouseEntered
+        // TODO add your handling code here:
+        JBClientes.setBackground(new java.awt.Color(102,102,102));
+    }//GEN-LAST:event_JBClientesMouseEntered
+
+    private void JBClientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBClientesMouseExited
+        // TODO add your handling code here:
+        JBClientes.setBackground(new java.awt.Color(51,51,51));
+    }//GEN-LAST:event_JBClientesMouseExited
+
+    private void JBAjudaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBAjudaMouseEntered
+        // TODO add your handling code here:
+        JBAjuda.setBackground(new java.awt.Color(102,102,102));
+    }//GEN-LAST:event_JBAjudaMouseEntered
+
+    private void JBAjudaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBAjudaMouseExited
+        // TODO add your handling code here:
+        JBAjuda.setBackground(new java.awt.Color(51,51,51));
+    }//GEN-LAST:event_JBAjudaMouseExited
+
+    private void JBLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBLogoutMouseEntered
+        // TODO add your handling code here:
+        JBLogout.setBackground(new java.awt.Color(102,102,102));
+    }//GEN-LAST:event_JBLogoutMouseEntered
+
+    private void JBLogoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBLogoutMouseExited
+        // TODO add your handling code here:
+        JBLogout.setBackground(new java.awt.Color(51,51,51));
+    }//GEN-LAST:event_JBLogoutMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -214,7 +391,7 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Metal".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -239,18 +416,31 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Atendente;
-    private javax.swing.JLabel Barra;
     private javax.swing.JButton JBAjuda;
     private javax.swing.JButton JBClientes;
     private javax.swing.JButton JBEstoque;
+    private javax.swing.JButton JBFuncionarios;
     private javax.swing.JButton JBLogout;
-    private javax.swing.JLabel Opções;
-    private javax.swing.JLabel Quadrado;
-    private javax.swing.JLabel Status;
     public static javax.swing.JDesktopPane WorkspaceAdministrador;
-    private javax.swing.JPanel iconeStatus;
+    private javax.swing.JLabel jLFuncionariosAtivos;
+    private javax.swing.JLabel jLFuncionariosAtivos1;
+    private javax.swing.JLabel jLFuncionariosAtivos2;
+    private javax.swing.JLabel jLNome;
+    private javax.swing.JLabel jLVisualizarFuncionarios;
+    private javax.swing.JLabel jLVisualizarFuncionarios1;
+    private javax.swing.JLabel jLVisualizarFuncionarios2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
 }

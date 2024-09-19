@@ -216,7 +216,9 @@ public class Login extends javax.swing.JFrame {
 //            Verifica se o tipo de funcionário e exibi a workspace correspondente
             switch (tipo) {
             case "ADMINISTRADOR":
-                WorkspaceAdministrador workspaceAdministrador = new WorkspaceAdministrador();
+                WorkspaceAdministrador workspaceAdministrador;
+                workspaceAdministrador = new WorkspaceAdministrador();
+                workspaceAdministrador.ExibirDados(response);
                 workspaceAdministrador.setVisible(true);
                 dispose();
                 break;
