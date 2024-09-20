@@ -226,7 +226,7 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
                 JBLogoutActionPerformed(evt);
             }
         });
-        jPanel2.add(JBLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 640, 300, 50));
+        jPanel2.add(JBLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 640, 320, 50));
 
         JBAjuda.setBackground(new java.awt.Color(51, 51, 51));
         JBAjuda.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -247,7 +247,7 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
                 JBAjudaActionPerformed(evt);
             }
         });
-        jPanel2.add(JBAjuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 450, 320, 50));
+        jPanel2.add(JBAjuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 450, 330, 50));
 
         jLNome.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLNome.setForeground(new java.awt.Color(255, 255, 255));
@@ -303,7 +303,7 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         Clientes CadastrarClientes = new Clientes();
         WorkspaceAdministrador.add(CadastrarClientes);     
         CadastrarClientes.setVisible(true); 
-        CadastrarClientes.setBounds(247, 97, 1035, 620);
+        CadastrarClientes.setBounds(247, -30, 1035, 1000);
     }//GEN-LAST:event_JBClientesActionPerformed
 
     private void JBAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAjudaActionPerformed

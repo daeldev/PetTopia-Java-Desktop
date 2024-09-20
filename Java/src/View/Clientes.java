@@ -88,7 +88,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(JTClientes);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 570, 530));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 570, 530));
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -106,7 +106,7 @@ public class Clientes extends javax.swing.JInternalFrame {
                 JTTelefoneActionPerformed(evt);
             }
         });
-        jPanel2.add(JTTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 120, 40));
+        jPanel2.add(JTTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 170, 40));
 
         JBAdicionar.setBackground(new java.awt.Color(51, 102, 255));
         JBAdicionar.setForeground(new java.awt.Color(255, 255, 255));
@@ -116,7 +116,7 @@ public class Clientes extends javax.swing.JInternalFrame {
                 JBAdicionarActionPerformed(evt);
             }
         });
-        jPanel2.add(JBAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 110, 50));
+        jPanel2.add(JBAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 110, 50));
 
         JBAtualizar.setBackground(new java.awt.Color(51, 102, 255));
         JBAtualizar.setForeground(new java.awt.Color(255, 255, 255));
@@ -126,7 +126,7 @@ public class Clientes extends javax.swing.JInternalFrame {
                 JBAtualizarActionPerformed(evt);
             }
         });
-        jPanel2.add(JBAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 110, 50));
+        jPanel2.add(JBAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 110, 50));
 
         JBRemover.setBackground(new java.awt.Color(255, 0, 51));
         JBRemover.setForeground(new java.awt.Color(255, 255, 255));
@@ -136,15 +136,17 @@ public class Clientes extends javax.swing.JInternalFrame {
                 JBRemoverActionPerformed(evt);
             }
         });
-        jPanel2.add(JBRemover, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 350, 110, 50));
+        jPanel2.add(JBRemover, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 110, 50));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Gênero:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
 
         JCBSexo.setBackground(new java.awt.Color(51, 51, 51));
+        JCBSexo.setForeground(new java.awt.Color(255, 255, 255));
         JCBSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino", "Outros" }));
         JCBSexo.setBorder(null);
-        jPanel2.add(JCBSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 100, -1));
+        jPanel2.add(JCBSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 100, -1));
 
         JTDataNasc.setBackground(new java.awt.Color(51, 51, 51));
         JTDataNasc.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Data de nascimento:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -153,7 +155,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jPanel2.add(JTDataNasc, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 130, 40));
+        jPanel2.add(JTDataNasc, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 170, 40));
 
         JTNome.setBackground(new java.awt.Color(51, 51, 51));
         JTNome.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,7 +165,7 @@ public class Clientes extends javax.swing.JInternalFrame {
                 JTNomeActionPerformed(evt);
             }
         });
-        jPanel2.add(JTNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 200, 40));
+        jPanel2.add(JTNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 330, 40));
 
         JTCPF.setBackground(new java.awt.Color(51, 51, 51));
         JTCPF.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cpf:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -178,17 +180,17 @@ public class Clientes extends javax.swing.JInternalFrame {
                 JTCPFActionPerformed(evt);
             }
         });
-        jPanel2.add(JTCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 120, -1));
+        jPanel2.add(JTCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 170, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 410, 440));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 410, 410));
 
         jLabel3.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel3.setText("Clientes");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel4.setText("Dados do cliente");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

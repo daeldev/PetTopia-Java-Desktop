@@ -131,7 +131,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                 JBRemoverActionPerformed(evt);
             }
         });
-        jPanel3.add(JBRemover, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, 120, 50));
+        jPanel3.add(JBRemover, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 120, 50));
 
         jTEmail.setBackground(new java.awt.Color(51, 51, 51));
         jTEmail.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,7 +147,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                 JBAtualizarActionPerformed(evt);
             }
         });
-        jPanel3.add(JBAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 120, 50));
+        jPanel3.add(JBAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 120, 50));
 
         JBAdicionar.setBackground(new java.awt.Color(51, 102, 255));
         JBAdicionar.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,7 +157,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                 JBAdicionarActionPerformed(evt);
             }
         });
-        jPanel3.add(JBAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 120, 50));
+        jPanel3.add(JBAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 120, 50));
 
         jCTipo.setBackground(new java.awt.Color(51, 51, 51));
         jCTipo.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,7 +179,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                 jTNomeActionPerformed(evt);
             }
         });
-        jPanel3.add(jTNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 260, -1));
+        jPanel3.add(jTNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 260, 40));
 
         jTConfirmarSenha.setBackground(new java.awt.Color(51, 51, 51));
         jTConfirmarSenha.setForeground(new java.awt.Color(255, 255, 255));
