@@ -1,6 +1,6 @@
 package View;
 import View.Estoque;
-import static View.WorkspaceFuncionario.WorkspaceAtendente;
+//import static View.WorkspaceFuncionario.WorkspaceAtendente;
 import Utils.ConexaoCi;
 import Utils.DTO;
 import java.awt.Color;
@@ -196,7 +196,7 @@ public class DadosCliente extends javax.swing.JInternalFrame {
             
             if (clienteDAO.VerificarCliente(clienteDTO)){
             Caixa Carrinho = new Caixa();
-            WorkspaceAtendente.add(Carrinho);
+//            WorkspaceAtendente.add(Carrinho);
             Carrinho.setVisible(true);
             Carrinho.setBounds(247, 97, 1036, 657);
             dispose();
@@ -205,7 +205,7 @@ public class DadosCliente extends javax.swing.JInternalFrame {
                 int Option = JOptionPane.showConfirmDialog(null,"Deseja cadastrar o cliente?","Atenção", JOptionPane.YES_NO_OPTION);
                 if(Option == JOptionPane.YES_OPTION){
                     Clientes clientes = new Clientes();
-                    WorkspaceAtendente.add(clientes);
+//                    WorkspaceAtendente.add(clientes);
                     clientes.setVisible(true);
                     clientes.setBounds(247, 97, 1036, 657);
                     dispose();             
@@ -213,7 +213,7 @@ public class DadosCliente extends javax.swing.JInternalFrame {
 
                 if(Option == JOptionPane.NO_OPTION){
                     Caixa carrinho = new Caixa();
-                    WorkspaceAtendente.add(carrinho);
+//                    WorkspaceAtendente.add(carrinho);
                     carrinho.setVisible(true);
                     carrinho.setBounds(247, 97, 1036, 657);
                     dispose();

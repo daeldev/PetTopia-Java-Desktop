@@ -4,7 +4,7 @@
  */
 package View;
 
-import static View.WorkspaceFuncionario.WorkspaceAtendente;
+//import static View.WorkspaceFuncionario.WorkspaceAtendente;
 import Utils.ConexaoCi;
 import Utils.DTO;
 import javax.swing.JOptionPane;
@@ -389,7 +389,7 @@ public class Caixa extends javax.swing.JInternalFrame {
             Pagamento pagamento = new Pagamento();  
             pagamento.Pagamento(vendaDTO, Carrinho);
 
-            WorkspaceAtendente.add(pagamento);
+//            WorkspaceAtendente.add(pagamento);
             pagamento.setVisible(true);
             pagamento.setBounds(450, 100, 379, 527);      
         }catch (NumberFormatException ex) {

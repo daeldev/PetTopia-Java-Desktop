@@ -224,11 +224,13 @@ public class Login extends javax.swing.JFrame {
                 break;
             case "VETERINARIO":
                 WorkspaceVeterinario workspaceVeterinario = new WorkspaceVeterinario();
+                workspaceVeterinario.ExibirDados(response);
                 workspaceVeterinario.setVisible(true);
                 dispose();
                 break;
             case "FUNCIONARIO":
                 WorkspaceFuncionario workspaceFuncionario = new WorkspaceFuncionario();
+                workspaceFuncionario.ExibirDados(response);
                 workspaceFuncionario.setVisible(true);
                 dispose();
                 break;

@@ -62,11 +62,11 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         JBFuncionarios = new javax.swing.JButton();
         JBClientes = new javax.swing.JButton();
-        JBEstoque = new javax.swing.JButton();
         JBLogout = new javax.swing.JButton();
-        JBAjuda = new javax.swing.JButton();
         jLNome = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        JBClientes1 = new javax.swing.JButton();
+        JBClientes2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -168,8 +168,8 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         JBClientes.setBackground(new java.awt.Color(51, 51, 51));
         JBClientes.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         JBClientes.setForeground(new java.awt.Color(255, 255, 255));
-        JBClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.2.png"))); // NOI18N
-        JBClientes.setText("Clientes");
+        JBClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.7.png"))); // NOI18N
+        JBClientes.setText("Gráficos");
         JBClientes.setBorder(null);
         JBClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -184,28 +184,7 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
                 JBClientesActionPerformed(evt);
             }
         });
-        jPanel2.add(JBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 370, 290, 50));
-
-        JBEstoque.setBackground(new java.awt.Color(51, 51, 51));
-        JBEstoque.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        JBEstoque.setForeground(new java.awt.Color(255, 255, 255));
-        JBEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.5.png"))); // NOI18N
-        JBEstoque.setText("Estoque");
-        JBEstoque.setBorder(null);
-        JBEstoque.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                JBEstoqueMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                JBEstoqueMouseExited(evt);
-            }
-        });
-        JBEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEstoqueActionPerformed(evt);
-            }
-        });
-        jPanel2.add(JBEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 290, 280, 50));
+        jPanel2.add(JBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 440, 290, 50));
 
         JBLogout.setBackground(new java.awt.Color(51, 51, 51));
         JBLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -228,27 +207,6 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         });
         jPanel2.add(JBLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 640, 320, 50));
 
-        JBAjuda.setBackground(new java.awt.Color(51, 51, 51));
-        JBAjuda.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        JBAjuda.setForeground(new java.awt.Color(255, 255, 255));
-        JBAjuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.3.png"))); // NOI18N
-        JBAjuda.setText("Ajuda");
-        JBAjuda.setBorder(null);
-        JBAjuda.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                JBAjudaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                JBAjudaMouseExited(evt);
-            }
-        });
-        JBAjuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBAjudaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(JBAjuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 450, 330, 50));
-
         jLNome.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLNome.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(jLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 180, 40));
@@ -257,6 +215,48 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Seja bem-vindo");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 110, 20));
+
+        JBClientes1.setBackground(new java.awt.Color(51, 51, 51));
+        JBClientes1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        JBClientes1.setForeground(new java.awt.Color(255, 255, 255));
+        JBClientes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.2.png"))); // NOI18N
+        JBClientes1.setText("Clientes");
+        JBClientes1.setBorder(null);
+        JBClientes1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JBClientes1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBClientes1MouseExited(evt);
+            }
+        });
+        JBClientes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBClientes1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(JBClientes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 290, 290, 50));
+
+        JBClientes2.setBackground(new java.awt.Color(51, 51, 51));
+        JBClientes2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        JBClientes2.setForeground(new java.awt.Color(255, 255, 255));
+        JBClientes2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.2.png"))); // NOI18N
+        JBClientes2.setText("Relatórios");
+        JBClientes2.setBorder(null);
+        JBClientes2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JBClientes2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBClientes2MouseExited(evt);
+            }
+        });
+        JBClientes2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBClientes2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(JBClientes2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 370, 260, 50));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 770));
 
@@ -290,14 +290,6 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JBEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEstoqueActionPerformed
-        // TODO add your handling code here:
-        Estoque AdministrarEstoque = new Estoque();
-        WorkspaceAdministrador.add(AdministrarEstoque);     
-        AdministrarEstoque.setVisible(true);
-        AdministrarEstoque.setBounds(247, 97, 1035, 620);
-    }//GEN-LAST:event_JBEstoqueActionPerformed
-
     private void JBClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBClientesActionPerformed
         // TODO add your handling code here:
         Clientes CadastrarClientes = new Clientes();
@@ -305,11 +297,6 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         CadastrarClientes.setVisible(true); 
         CadastrarClientes.setBounds(247, -30, 1035, 1000);
     }//GEN-LAST:event_JBClientesActionPerformed
-
-    private void JBAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAjudaActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(rootPane, "Precisa de alguma ajuda? Entre em contato com algum superior.");
-    }//GEN-LAST:event_JBAjudaActionPerformed
 
     private void JBLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBLogoutActionPerformed
         // TODO add your handling code here:
@@ -340,16 +327,6 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         JBFuncionarios.setBackground(new java.awt.Color(51,51,51));
     }//GEN-LAST:event_JBFuncionariosMouseExited
 
-    private void JBEstoqueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBEstoqueMouseEntered
-        // TODO add your handling code here:
-        JBEstoque.setBackground(new java.awt.Color(102,102,102));
-    }//GEN-LAST:event_JBEstoqueMouseEntered
-
-    private void JBEstoqueMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBEstoqueMouseExited
-        // TODO add your handling code here:
-        JBEstoque.setBackground(new java.awt.Color(51,51,51));
-    }//GEN-LAST:event_JBEstoqueMouseExited
-
     private void JBClientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBClientesMouseEntered
         // TODO add your handling code here:
         JBClientes.setBackground(new java.awt.Color(102,102,102));
@@ -360,16 +337,6 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         JBClientes.setBackground(new java.awt.Color(51,51,51));
     }//GEN-LAST:event_JBClientesMouseExited
 
-    private void JBAjudaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBAjudaMouseEntered
-        // TODO add your handling code here:
-        JBAjuda.setBackground(new java.awt.Color(102,102,102));
-    }//GEN-LAST:event_JBAjudaMouseEntered
-
-    private void JBAjudaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBAjudaMouseExited
-        // TODO add your handling code here:
-        JBAjuda.setBackground(new java.awt.Color(51,51,51));
-    }//GEN-LAST:event_JBAjudaMouseExited
-
     private void JBLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBLogoutMouseEntered
         // TODO add your handling code here:
         JBLogout.setBackground(new java.awt.Color(102,102,102));
@@ -379,6 +346,30 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
         // TODO add your handling code here:
         JBLogout.setBackground(new java.awt.Color(51,51,51));
     }//GEN-LAST:event_JBLogoutMouseExited
+
+    private void JBClientes1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBClientes1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBClientes1MouseEntered
+
+    private void JBClientes1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBClientes1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBClientes1MouseExited
+
+    private void JBClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBClientes1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBClientes1ActionPerformed
+
+    private void JBClientes2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBClientes2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBClientes2MouseEntered
+
+    private void JBClientes2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBClientes2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBClientes2MouseExited
+
+    private void JBClientes2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBClientes2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBClientes2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -416,9 +407,9 @@ public class WorkspaceAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBAjuda;
     private javax.swing.JButton JBClientes;
-    private javax.swing.JButton JBEstoque;
+    private javax.swing.JButton JBClientes1;
+    private javax.swing.JButton JBClientes2;
     private javax.swing.JButton JBFuncionarios;
     private javax.swing.JButton JBLogout;
     public static javax.swing.JDesktopPane WorkspaceAdministrador;

@@ -1,5 +1,5 @@
 package View;
-import static View.WorkspaceFuncionario.WorkspaceAtendente;
+//import static View.WorkspaceFuncionario.WorkspaceAtendente;
 import Utils.ConexaoCi;
 import Utils.DTO;
 import javax.swing.JOptionPane;
@@ -345,7 +345,7 @@ public class Pagamento extends javax.swing.JInternalFrame {
                             if(Option == JOptionPane.YES_OPTION){
                                 dispose(); 
                                 Clientes clientes = new Clientes();
-                                WorkspaceAtendente.add(clientes);
+//                                WorkspaceAtendente.add(clientes);
                                 clientes.setVisible(true);
                                 clientes.setBounds(247, 97, 1036, 657);                        
                             }
