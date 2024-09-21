@@ -131,4 +131,142 @@ public class HttpConnection {
         }
         return new ArrayList<>();  // Retorna uma lista vazia caso ocorra erro
     }
+    
+    public ClienteDTO CadastrarCliente(ClienteDTO clienteDTO) {
+        HttpURLConnection conn = null;
+        try {
+            URL url = new URL(apiUrl + "cliente/cadastrar");
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setDoOutput(true);
+
+            String inputJson = mapper.writeValueAsString(clienteDTO);
+            try (OutputStream os = conn.getOutputStream()) {
+                os.write(inputJson.getBytes());
+                os.flush();
+            }
+
+            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        response.append(line);
+                    }
+                    // Converte a resposta JSON para FuncionarioModel
+                    return mapper.readValue(response.toString(), ClienteDTO.class);
+                }
+            } else {
+                System.err.println("Erro na resposta: " + conn.getResponseCode());
+            }
+        } catch (Exception e) {
+            System.err.println("ERRO: " + e);
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+        return null;
+    }
+    
+    public List<ClienteDTO> listarClientes() {
+        HttpURLConnection conn = null;
+        try {
+            URL url = new URL(apiUrl + "funcionario/listar/cliente");
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Content-Type", "application/json");
+
+            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        response.append(line);
+                    }
+                    // Converte a resposta JSON para uma lista de FuncionarioDTO
+                    return Arrays.asList(mapper.readValue(response.toString(), ClienteDTO[].class));
+                }
+            } else {
+                System.err.println("Erro na resposta: " + conn.getResponseCode());
+            }
+        } catch (Exception e) {
+            System.err.println("ERRO: " + e);
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+        return new ArrayList<>();  // Retorna uma lista vazia caso ocorra erro
+    }
+    
+    public ConsultaDTO agendarConsulta(ConsultaDTO consultaDTO) {
+        HttpURLConnection conn = null;
+        try {
+            URL url = new URL(apiUrl + "cliente/agendarConsulta");
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setDoOutput(true);
+
+            String inputJson = mapper.writeValueAsString(consultaDTO);
+            try (OutputStream os = conn.getOutputStream()) {
+                os.write(inputJson.getBytes());
+                os.flush();
+            }
+
+            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        response.append(line);
+                    }
+                    // Converte a resposta JSON para FuncionarioModel
+                    return mapper.readValue(response.toString(), ConsultaDTO.class);
+                }
+            } else {
+                System.err.println("Erro na resposta: " + conn.getResponseCode());
+            }
+        } catch (Exception e) {
+            System.err.println("ERRO: " + e);
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+        return null;
+    }
+    
+    public List<ConsultaDTO> listarConsultas() {
+        HttpURLConnection conn = null;
+        try {
+            URL url = new URL(apiUrl + "funcionario/ListarConsultas");
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Content-Type", "application/json");
+
+            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        response.append(line);
+                    }
+                    // Converte a resposta JSON para uma lista de FuncionarioDTO
+                    return Arrays.asList(mapper.readValue(response.toString(), ConsultaDTO[].class));
+                }
+            } else {
+                System.err.println("Erro na resposta: " + conn.getResponseCode());
+            }
+        } catch (Exception e) {
+            System.err.println("ERRO: " + e);
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+        return new ArrayList<>();  // Retorna uma lista vazia caso ocorra erro
+    }
 }

@@ -150,7 +150,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tipo:");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, -1, -1));
 
         JBRemover.setBackground(new java.awt.Color(255, 0, 0));
         JBRemover.setForeground(new java.awt.Color(255, 255, 255));
@@ -160,7 +160,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                 JBRemoverActionPerformed(evt);
             }
         });
-        jPanel3.add(JBRemover, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 120, 50));
+        jPanel3.add(JBRemover, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 120, 50));
 
         jTEmail.setBackground(new java.awt.Color(51, 51, 51));
         jTEmail.setForeground(new java.awt.Color(255, 255, 255));
@@ -176,7 +176,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                 JBAtualizarActionPerformed(evt);
             }
         });
-        jPanel3.add(JBAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 120, 50));
+        jPanel3.add(JBAtualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 120, 50));
 
         JBAdicionar.setBackground(new java.awt.Color(51, 102, 255));
         JBAdicionar.setForeground(new java.awt.Color(255, 255, 255));
@@ -186,7 +186,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                 JBAdicionarActionPerformed(evt);
             }
         });
-        jPanel3.add(JBAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 120, 50));
+        jPanel3.add(JBAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 120, 50));
 
         jCTipo.setBackground(new java.awt.Color(51, 51, 51));
         jCTipo.setForeground(new java.awt.Color(255, 255, 255));
@@ -197,7 +197,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                 jCTipoActionPerformed(evt);
             }
         });
-        jPanel3.add(jCTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
+        jPanel3.add(jCTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, -1, -1));
 
         jTNome.setBackground(new java.awt.Color(51, 51, 51));
         jTNome.setForeground(new java.awt.Color(255, 255, 255));
@@ -254,10 +254,10 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(427, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(482, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

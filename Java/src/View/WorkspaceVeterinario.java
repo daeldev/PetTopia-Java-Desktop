@@ -42,7 +42,7 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        WorkspaceAdministrador = new javax.swing.JDesktopPane();
+        WorkspaceVeterinario = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -60,12 +60,13 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
         jLFuncionariosAtivos = new javax.swing.JLabel();
         jLVisualizarFuncionarios = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        JBFuncionarios = new javax.swing.JButton();
         JBLogout = new javax.swing.JButton();
-        jLNome = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         JBFuncionarios1 = new javax.swing.JButton();
+        JBFuncionarios = new javax.swing.JButton();
+        jLNome = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Workspace");
@@ -93,14 +94,14 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
         jLVisualizarFuncionarios2.setText("Visualizar");
         jPanel5.add(jLVisualizarFuncionarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 60, 20));
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 70, 300, 160));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 190, 300, 160));
 
         jPanel4.setBackground(new java.awt.Color(51, 51, 51));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Consultas concluídas");
+        jLabel5.setText("Funcionários cadastrados");
         jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 170, 20));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.2.png"))); // NOI18N
@@ -115,15 +116,15 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
         jLVisualizarFuncionarios1.setText("Visualizar");
         jPanel4.add(jLVisualizarFuncionarios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 60, 20));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 300, 160));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 190, 300, 160));
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Consultas marcadas");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 140, 20));
+        jLabel3.setText("Funcionários ativos");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 130, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.2.png"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 56, -1, -1));
@@ -137,31 +138,10 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
         jLVisualizarFuncionarios.setText("Visualizar");
         jPanel3.add(jLVisualizarFuncionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 60, 20));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 300, 160));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 300, 160));
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        JBFuncionarios.setBackground(new java.awt.Color(51, 51, 51));
-        JBFuncionarios.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        JBFuncionarios.setForeground(new java.awt.Color(255, 255, 255));
-        JBFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.7.png"))); // NOI18N
-        JBFuncionarios.setText("Receitas");
-        JBFuncionarios.setBorder(null);
-        JBFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                JBFuncionariosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                JBFuncionariosMouseExited(evt);
-            }
-        });
-        JBFuncionarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBFuncionariosActionPerformed(evt);
-            }
-        });
-        jPanel2.add(JBFuncionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 290, 290, 50));
 
         JBLogout.setBackground(new java.awt.Color(51, 51, 51));
         JBLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -184,14 +164,9 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
         });
         jPanel2.add(JBLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 640, 320, 50));
 
-        jLNome.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLNome.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.add(jLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 180, 40));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Seja bem-vindo");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 110, 20));
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/PetTopia Logo.png"))); // NOI18N
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 140, 130));
 
         JBFuncionarios1.setBackground(new java.awt.Color(51, 51, 51));
         JBFuncionarios1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -214,21 +189,51 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
         });
         jPanel2.add(JBFuncionarios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 210, 270, 50));
 
+        JBFuncionarios.setBackground(new java.awt.Color(51, 51, 51));
+        JBFuncionarios.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        JBFuncionarios.setForeground(new java.awt.Color(255, 255, 255));
+        JBFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.7.png"))); // NOI18N
+        JBFuncionarios.setText("Receitas");
+        JBFuncionarios.setBorder(null);
+        JBFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JBFuncionariosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBFuncionariosMouseExited(evt);
+            }
+        });
+        JBFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBFuncionariosActionPerformed(evt);
+            }
+        });
+        jPanel2.add(JBFuncionarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 290, 290, 50));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 770));
+
+        jLNome.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLNome.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel1.add(jLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 190, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/9.1.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 700));
 
-        WorkspaceAdministrador.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("Seja bem-vindo");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 110, 20));
 
-        javax.swing.GroupLayout WorkspaceAdministradorLayout = new javax.swing.GroupLayout(WorkspaceAdministrador);
-        WorkspaceAdministrador.setLayout(WorkspaceAdministradorLayout);
-        WorkspaceAdministradorLayout.setHorizontalGroup(
-            WorkspaceAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        WorkspaceVeterinario.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout WorkspaceVeterinarioLayout = new javax.swing.GroupLayout(WorkspaceVeterinario);
+        WorkspaceVeterinario.setLayout(WorkspaceVeterinarioLayout);
+        WorkspaceVeterinarioLayout.setHorizontalGroup(
+            WorkspaceVeterinarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        WorkspaceAdministradorLayout.setVerticalGroup(
-            WorkspaceAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        WorkspaceVeterinarioLayout.setVerticalGroup(
+            WorkspaceVeterinarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, Short.MAX_VALUE)
         );
 
@@ -236,11 +241,11 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(WorkspaceAdministrador)
+            .addComponent(WorkspaceVeterinario)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(WorkspaceAdministrador)
+            .addComponent(WorkspaceVeterinario)
         );
 
         pack();
@@ -255,25 +260,6 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
             Logout.setVisible(true);
         }
     }//GEN-LAST:event_JBLogoutActionPerformed
-
-    private void JBFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBFuncionariosActionPerformed
-        // TODO add your handling code here:
-        Funcionarios GerenciarFuncionários;
-        GerenciarFuncionários = new Funcionarios();
-        WorkspaceAdministrador.add(GerenciarFuncionários);
-        GerenciarFuncionários.setVisible(true);
-        GerenciarFuncionários.setBounds(247, -30, 1035, 1000);
-    }//GEN-LAST:event_JBFuncionariosActionPerformed
-
-    private void JBFuncionariosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBFuncionariosMouseEntered
-        // TODO add your handling code here:
-        JBFuncionarios.setBackground(new java.awt.Color(102,102,102));
-    }//GEN-LAST:event_JBFuncionariosMouseEntered
-
-    private void JBFuncionariosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBFuncionariosMouseExited
-        // TODO add your handling code here:
-        JBFuncionarios.setBackground(new java.awt.Color(51,51,51));
-    }//GEN-LAST:event_JBFuncionariosMouseExited
 
     private void JBLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBLogoutMouseEntered
         // TODO add your handling code here:
@@ -296,6 +282,25 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
     private void JBFuncionarios1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBFuncionarios1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JBFuncionarios1ActionPerformed
+
+    private void JBFuncionariosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBFuncionariosMouseEntered
+        // TODO add your handling code here:
+        JBFuncionarios.setBackground(new java.awt.Color(102,102,102));
+    }//GEN-LAST:event_JBFuncionariosMouseEntered
+
+    private void JBFuncionariosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBFuncionariosMouseExited
+        // TODO add your handling code here:
+        JBFuncionarios.setBackground(new java.awt.Color(51,51,51));
+    }//GEN-LAST:event_JBFuncionariosMouseExited
+
+    private void JBFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBFuncionariosActionPerformed
+        // TODO add your handling code here:
+        Funcionarios GerenciarFuncionários;
+        GerenciarFuncionários = new Funcionarios();
+        WorkspaceVeterinario.add(GerenciarFuncionários);
+        GerenciarFuncionários.setVisible(true);
+        GerenciarFuncionários.setBounds(247, -30, 1035, 1000);
+    }//GEN-LAST:event_JBFuncionariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,6 +329,8 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -337,7 +344,7 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
     private javax.swing.JButton JBFuncionarios;
     private javax.swing.JButton JBFuncionarios1;
     private javax.swing.JButton JBLogout;
-    public static javax.swing.JDesktopPane WorkspaceAdministrador;
+    public static javax.swing.JDesktopPane WorkspaceVeterinario;
     private javax.swing.JLabel jLFuncionariosAtivos;
     private javax.swing.JLabel jLFuncionariosAtivos1;
     private javax.swing.JLabel jLFuncionariosAtivos2;
@@ -353,6 +360,7 @@ public class WorkspaceVeterinario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
