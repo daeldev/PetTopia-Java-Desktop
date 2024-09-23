@@ -157,6 +157,7 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
         jBClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.2.png"))); // NOI18N
         jBClientes.setText("Clientes");
         jBClientes.setBorder(null);
+        jBClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jBClientesMouseEntered(evt);
@@ -178,6 +179,7 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
         JBLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.4.png"))); // NOI18N
         JBLogout.setText("Logout");
         JBLogout.setBorder(null);
+        JBLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBLogout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 JBLogoutMouseEntered(evt);
@@ -196,9 +198,10 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
         jBAdocoes.setBackground(new java.awt.Color(51, 51, 51));
         jBAdocoes.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jBAdocoes.setForeground(new java.awt.Color(255, 255, 255));
-        jBAdocoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.7.png"))); // NOI18N
+        jBAdocoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/adocao.png"))); // NOI18N
         jBAdocoes.setText("Adoções");
         jBAdocoes.setBorder(null);
+        jBAdocoes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBAdocoes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jBAdocoesMouseEntered(evt);
@@ -212,14 +215,15 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
                 jBAdocoesActionPerformed(evt);
             }
         });
-        jPanel2.add(jBAdocoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 550, 290, 50));
+        jPanel2.add(jBAdocoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 550, 280, 50));
 
         jBDenuncias.setBackground(new java.awt.Color(51, 51, 51));
         jBDenuncias.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jBDenuncias.setForeground(new java.awt.Color(255, 255, 255));
-        jBDenuncias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.7.png"))); // NOI18N
+        jBDenuncias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/megafone.png"))); // NOI18N
         jBDenuncias.setText("Denúncias");
         jBDenuncias.setBorder(null);
+        jBDenuncias.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBDenuncias.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jBDenunciasMouseEntered(evt);
@@ -238,9 +242,10 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
         jBDoacoes.setBackground(new java.awt.Color(51, 51, 51));
         jBDoacoes.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jBDoacoes.setForeground(new java.awt.Color(255, 255, 255));
-        jBDoacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.7.png"))); // NOI18N
+        jBDoacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Doacao.png"))); // NOI18N
         jBDoacoes.setText("Doações");
         jBDoacoes.setBorder(null);
+        jBDoacoes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBDoacoes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jBDoacoesMouseEntered(evt);
@@ -254,14 +259,15 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
                 jBDoacoesActionPerformed(evt);
             }
         });
-        jPanel2.add(jBDoacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 480, 300, 50));
+        jPanel2.add(jBDoacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 480, 280, 50));
 
         jBAnimais.setBackground(new java.awt.Color(51, 51, 51));
         jBAnimais.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jBAnimais.setForeground(new java.awt.Color(255, 255, 255));
-        jBAnimais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.7.png"))); // NOI18N
+        jBAnimais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.8.png"))); // NOI18N
         jBAnimais.setText("Animais");
         jBAnimais.setBorder(null);
+        jBAnimais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBAnimais.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jBAnimaisMouseEntered(evt);
@@ -275,7 +281,7 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
                 jBAnimaisActionPerformed(evt);
             }
         });
-        jPanel2.add(jBAnimais, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 410, 300, 50));
+        jPanel2.add(jBAnimais, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 410, 290, 50));
 
         jBConsultas.setBackground(new java.awt.Color(51, 51, 51));
         jBConsultas.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -283,6 +289,7 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
         jBConsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.7.png"))); // NOI18N
         jBConsultas.setText("Consultas");
         jBConsultas.setBorder(null);
+        jBConsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBConsultas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jBConsultasMouseEntered(evt);
@@ -341,14 +348,15 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
 
     private void jBClientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBClientesMouseEntered
         // TODO add your handling code here:
+        jBClientes.setBackground(new java.awt.Color(102,102,102));
     }//GEN-LAST:event_jBClientesMouseEntered
 
     private void jBClientesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBClientesMouseExited
         // TODO add your handling code here:
+        jBClientes.setBackground(new java.awt.Color(51,51,51));
     }//GEN-LAST:event_jBClientesMouseExited
 
     private void jBClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBClientesActionPerformed
-        // TODO add your handling code here:
         // TODO add your handling code here:
         Clientes clientes = new Clientes();
         WorkspaceFuncionario.add(clientes);
@@ -409,15 +417,17 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
         Endereco endereco = new Endereco(WorkspaceFuncionario);  // Passa o WorkspaceFuncionario
         WorkspaceFuncionario.add(endereco);
         endereco.setVisible(true);
-        endereco.setBounds(400, 0, 400, 620);
+        endereco.setBounds(400, 0, 400, 712);
     }//GEN-LAST:event_jBDenunciasActionPerformed
 
     private void jBDoacoesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBDoacoesMouseEntered
         // TODO add your handling code here:
+        jBDoacoes.setBackground(new java.awt.Color(102,102,102));
     }//GEN-LAST:event_jBDoacoesMouseEntered
 
     private void jBDoacoesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBDoacoesMouseExited
         // TODO add your handling code here:
+        jBDoacoes.setBackground(new java.awt.Color(51,51,51));
     }//GEN-LAST:event_jBDoacoesMouseExited
 
     private void jBDoacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBDoacoesActionPerformed
@@ -426,22 +436,30 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
 
     private void jBAnimaisMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBAnimaisMouseEntered
         // TODO add your handling code here:
+        jBAnimais.setBackground(new java.awt.Color(102,102,102));
     }//GEN-LAST:event_jBAnimaisMouseEntered
 
     private void jBAnimaisMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBAnimaisMouseExited
         // TODO add your handling code here:
+        jBAnimais.setBackground(new java.awt.Color(51,51,51));
     }//GEN-LAST:event_jBAnimaisMouseExited
 
     private void jBAnimaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAnimaisActionPerformed
         // TODO add your handling code here:
+        Animais animais = new Animais();
+        WorkspaceFuncionario.add(animais);
+        animais.setVisible(true);
+        animais.setBounds(247, -30, 1035, 1000);
     }//GEN-LAST:event_jBAnimaisActionPerformed
 
     private void jBConsultasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBConsultasMouseEntered
         // TODO add your handling code here:
+        jBConsultas.setBackground(new java.awt.Color(102,102,102));
     }//GEN-LAST:event_jBConsultasMouseEntered
 
     private void jBConsultasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBConsultasMouseExited
         // TODO add your handling code here:
+        jBConsultas.setBackground(new java.awt.Color(51,51,51));
     }//GEN-LAST:event_jBConsultasMouseExited
 
     private void jBConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConsultasActionPerformed
