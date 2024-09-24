@@ -269,4 +269,143 @@ public class HttpConnection {
         }
         return new ArrayList<>();  // Retorna uma lista vazia caso ocorra erro
     }
+    
+    public DenunciaDTO cadastrarDenuncia(DenunciaDTO denunciaDTO) {
+        HttpURLConnection conn = null;
+        try {
+            URL url = new URL(apiUrl + "cliente/RealizarDenuncia");
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setDoOutput(true);
+
+            String inputJson = mapper.writeValueAsString(denunciaDTO);
+            try (OutputStream os = conn.getOutputStream()) {
+                os.write(inputJson.getBytes());
+                os.flush();
+            }
+
+            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        response.append(line);
+                    }
+                    // Converte a resposta JSON para FuncionarioModel
+                    return mapper.readValue(response.toString(), DenunciaDTO.class);
+                }
+            } else {
+                System.err.println("Erro na resposta: " + conn.getResponseCode());
+            }
+        } catch (Exception e) {
+            System.err.println("ERRO: " + e);
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+        return null;
+    }
+    
+    public List<DenunciaDTO> listarDenuncias() {
+        HttpURLConnection conn = null;
+        try {
+            URL url = new URL(apiUrl + "funcionario/listar/denuncia");
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Content-Type", "application/json");
+
+            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        response.append(line);
+                    }
+                    // Converte a resposta JSON para uma lista de FuncionarioDTO
+                    return Arrays.asList(mapper.readValue(response.toString(), DenunciaDTO[].class));
+                }
+            } else {
+                System.err.println("Erro na resposta: " + conn.getResponseCode());
+            }
+        } catch (Exception e) {
+            System.err.println("ERRO: " + e);
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+        return new ArrayList<>();  // Retorna uma lista vazia caso ocorra erro
+    }
+    
+    // animais
+    public AnimalDTO cadastrarAnimal(AnimalDTO animalDTO) {
+        HttpURLConnection conn = null;
+        try {
+            URL url = new URL(apiUrl + "cliente/RealizarDenuncia");
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setDoOutput(true);
+
+            String inputJson = mapper.writeValueAsString(animalDTO);
+            try (OutputStream os = conn.getOutputStream()) {
+                os.write(inputJson.getBytes());
+                os.flush();
+            }
+
+            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        response.append(line);
+                    }
+                    // Converte a resposta JSON para FuncionarioModel
+                    return mapper.readValue(response.toString(), AnimalDTO.class);
+                }
+            } else {
+                System.err.println("Erro na resposta: " + conn.getResponseCode());
+            }
+        } catch (Exception e) {
+            System.err.println("ERRO: " + e);
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+        return null;
+    }
+    
+    public List<AnimalDTO> listarAnimais() {
+        HttpURLConnection conn = null;
+        try {
+            URL url = new URL(apiUrl + "funcionario/listar/animal");
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Content-Type", "application/json");
+
+            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        response.append(line);
+                    }
+                    // Converte a resposta JSON para uma lista de FuncionarioDTO
+                    return Arrays.asList(mapper.readValue(response.toString(), AnimalDTO[].class));
+                }
+            } else {
+                System.err.println("Erro na resposta: " + conn.getResponseCode());
+            }
+        } catch (Exception e) {
+            System.err.println("ERRO: " + e);
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+        return new ArrayList<>();  // Retorna uma lista vazia caso ocorra erro
+    }
 }
