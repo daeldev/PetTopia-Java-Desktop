@@ -152,7 +152,7 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 140, 130));
 
         jBClientes.setBackground(new java.awt.Color(51, 51, 51));
-        jBClientes.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jBClientes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jBClientes.setForeground(new java.awt.Color(255, 255, 255));
         jBClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.2.png"))); // NOI18N
         jBClientes.setText("Clientes");
@@ -171,10 +171,10 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
                 jBClientesActionPerformed(evt);
             }
         });
-        jPanel2.add(jBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 340, 290, 50));
+        jPanel2.add(jBClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 340, 310, 50));
 
         JBLogout.setBackground(new java.awt.Color(51, 51, 51));
-        JBLogout.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        JBLogout.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         JBLogout.setForeground(new java.awt.Color(255, 255, 255));
         JBLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.4.png"))); // NOI18N
         JBLogout.setText("Logout");
@@ -193,10 +193,10 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
                 JBLogoutActionPerformed(evt);
             }
         });
-        jPanel2.add(JBLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 640, 320, 50));
+        jPanel2.add(JBLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 640, 330, 50));
 
         jBAdocoes.setBackground(new java.awt.Color(51, 51, 51));
-        jBAdocoes.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jBAdocoes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jBAdocoes.setForeground(new java.awt.Color(255, 255, 255));
         jBAdocoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/adocao.png"))); // NOI18N
         jBAdocoes.setText("Adoções");
@@ -215,10 +215,10 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
                 jBAdocoesActionPerformed(evt);
             }
         });
-        jPanel2.add(jBAdocoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 550, 280, 50));
+        jPanel2.add(jBAdocoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 550, 300, 50));
 
         jBDenuncias.setBackground(new java.awt.Color(51, 51, 51));
-        jBDenuncias.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jBDenuncias.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jBDenuncias.setForeground(new java.awt.Color(255, 255, 255));
         jBDenuncias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/megafone.png"))); // NOI18N
         jBDenuncias.setText("Denúncias");
@@ -237,10 +237,10 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
                 jBDenunciasActionPerformed(evt);
             }
         });
-        jPanel2.add(jBDenuncias, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 200, 270, 50));
+        jPanel2.add(jBDenuncias, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 200, 290, 50));
 
         jBDoacoes.setBackground(new java.awt.Color(51, 51, 51));
-        jBDoacoes.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jBDoacoes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jBDoacoes.setForeground(new java.awt.Color(255, 255, 255));
         jBDoacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Doacao.png"))); // NOI18N
         jBDoacoes.setText("Doações");
@@ -259,12 +259,12 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
                 jBDoacoesActionPerformed(evt);
             }
         });
-        jPanel2.add(jBDoacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 480, 280, 50));
+        jPanel2.add(jBDoacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 480, 300, 50));
 
         jBAnimais.setBackground(new java.awt.Color(51, 51, 51));
-        jBAnimais.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jBAnimais.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jBAnimais.setForeground(new java.awt.Color(255, 255, 255));
-        jBAnimais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.8.png"))); // NOI18N
+        jBAnimais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/PataIcon.png"))); // NOI18N
         jBAnimais.setText("Animais");
         jBAnimais.setBorder(null);
         jBAnimais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -281,10 +281,10 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
                 jBAnimaisActionPerformed(evt);
             }
         });
-        jPanel2.add(jBAnimais, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 410, 290, 50));
+        jPanel2.add(jBAnimais, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 410, 300, 50));
 
         jBConsultas.setBackground(new java.awt.Color(51, 51, 51));
-        jBConsultas.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jBConsultas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jBConsultas.setForeground(new java.awt.Color(255, 255, 255));
         jBConsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/8.7.png"))); // NOI18N
         jBConsultas.setText("Consultas");
@@ -303,7 +303,7 @@ public class WorkspaceFuncionario extends javax.swing.JFrame {
                 jBConsultasActionPerformed(evt);
             }
         });
-        jPanel2.add(jBConsultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 270, 280, 50));
+        jPanel2.add(jBConsultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 270, 300, 50));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 770));
 
