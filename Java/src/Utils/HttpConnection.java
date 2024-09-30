@@ -5,27 +5,29 @@
 package Utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import static javax.swing.text.DefaultStyledDocument.ElementSpec.ContentType;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
 
 public class HttpConnection {
+    
     private final String apiUrl = "http://localhost:8081/api/";
-    private final ObjectMapper mapper = new ObjectMapper();
+    private final ObjectMapper mapper;
+    
+    public HttpConnection() {
+        mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule()); // Suporte para LocalDate e outras classes de data
+        mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false); // Para formatar as datas em um formato legÃ­vel, como 'yyyy-MM-dd'
+    }
 
-    public FuncionarioDTO sendLoginRequest(FuncionarioDTO funcionarioDTO) {
+    public FuncionarioDTO login(FuncionarioDTO funcionarioDTO) {
         HttpURLConnection conn = null;
         try {
             URL url = new URL(apiUrl + "funcionario/LoginNormal");
@@ -132,21 +134,23 @@ public class HttpConnection {
         return new ArrayList<>();  // Retorna uma lista vazia caso ocorra erro
     }
     
-    public ClienteDTO CadastrarCliente(ClienteDTO clienteDTO) {
+    public ClienteDTO cadastrarCliente(ClienteDTO clienteDTO) {
         HttpURLConnection conn = null;
         try {
-            URL url = new URL(apiUrl + "cliente/cadastrar");
+            URL url = new URL(apiUrl + "cliente/cadastrarJava");
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
             conn.setDoOutput(true);
 
+            // Serializa o clienteDTO para JSON
             String inputJson = mapper.writeValueAsString(clienteDTO);
             try (OutputStream os = conn.getOutputStream()) {
                 os.write(inputJson.getBytes());
                 os.flush();
             }
 
+            // Verifica se a resposta HTTP foi bem-sucedida
             if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
                     StringBuilder response = new StringBuilder();
@@ -154,14 +158,14 @@ public class HttpConnection {
                     while ((line = br.readLine()) != null) {
                         response.append(line);
                     }
-                    // Converte a resposta JSON para FuncionarioModel
+                    // Converte a resposta JSON para ClienteDTO
                     return mapper.readValue(response.toString(), ClienteDTO.class);
                 }
             } else {
                 System.err.println("Erro na resposta: " + conn.getResponseCode());
             }
         } catch (Exception e) {
-            System.err.println("ERRO: " + e);
+            System.err.println("HttpConnection erro: " + e.getMessage());
         } finally {
             if (conn != null) {
                 conn.disconnect();
@@ -201,7 +205,7 @@ public class HttpConnection {
         return new ArrayList<>();  // Retorna uma lista vazia caso ocorra erro
     }
     
-    public ConsultaDTO agendarConsulta(ConsultaDTO consultaDTO) {
+    public ConsultaDTO cadastrarConsulta(ConsultaDTO consultaDTO) {
         HttpURLConnection conn = null;
         try {
             URL url = new URL(apiUrl + "cliente/agendarConsulta");
@@ -407,5 +411,43 @@ public class HttpConnection {
             }
         }
         return new ArrayList<>();  // Retorna uma lista vazia caso ocorra erro
+    }
+    
+    public FuncionarioDTO editarFuncionario(FuncionarioDTO funcionarioDTO) {
+        HttpURLConnection conn = null;
+        try {
+            URL url = new URL(apiUrl + "adm/editarFuncionario");
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setDoOutput(true);
+
+            String inputJson = mapper.writeValueAsString(funcionarioDTO);
+            try (OutputStream os = conn.getOutputStream()) {
+                os.write(inputJson.getBytes());
+                os.flush();
+            }
+
+            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        response.append(line);
+                    }
+                    // Converte a resposta JSON para FuncionarioModel
+                    return mapper.readValue(response.toString(), FuncionarioDTO.class);
+                }
+            } else {
+                System.err.println("Erro na resposta: " + conn.getResponseCode());
+            }
+        } catch (Exception e) {
+            System.err.println("ERRO: " + e);
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+        return null;
     }
 }
