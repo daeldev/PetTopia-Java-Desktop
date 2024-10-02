@@ -67,9 +67,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         }
     }
     
+    private int a;
     private ClienteDTO clienteDTO;
     public Clientes() {
         initComponents();
+        // Estiliza a tabela
         FlatLaf.registerCustomDefaultsSource("tableview");
         FlatMacDarkLaf.setup();
         
@@ -199,7 +201,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         jBAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/AddIcon.png"))); // NOI18N
         jBAdd.setText("Add");
         jBAdd.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(59, 59, 59)));
-        jBAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jBAddMouseEntered(evt);
@@ -219,7 +221,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         jBEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/EditarIcon.png"))); // NOI18N
         jBEditar.setText("Editar");
         jBEditar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(59, 59, 59)));
-        jBEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBEditar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jBEditarMouseEntered(evt);
@@ -239,7 +241,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         jBDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/DeletarIcon.png"))); // NOI18N
         jBDeletar.setText("Deletar");
         jBDeletar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(59, 59, 59)));
-        jBDeletar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBDeletar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBDeletar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jBDeletarMouseEntered(evt);
@@ -525,8 +527,17 @@ public class Clientes extends javax.swing.JInternalFrame {
         if(jTClientes.getSelectedRow() != -1){
 
             DefaultTableModel modelo = (DefaultTableModel) jTClientes.getModel();
-            modelo.removeRow(jTClientes.getSelectedRow());
+            HttpConnection httpConnection = new HttpConnection();
+            int idCliente = Integer.parseInt(jTClientes.getValueAt(jTClientes.getSelectedRow(), 7).toString());
+            int response = httpConnection.deletarCliente(idCliente);
+            
+            if (response != 0){
+                JOptionPane.showMessageDialog(rootPane, "Cliente deletado com sucesso.");
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "ERRO: deletar cliente.");
+            }
         }else{
+            System.out.println(jTClientes.getSelectedRow());
             JOptionPane.showMessageDialog(null, "ERRO: selecione um cliente para deletar.");
         }
     }//GEN-LAST:event_jBDeletarActionPerformed
